@@ -9,17 +9,6 @@ import { Data } from '@angular/router';
 })
 export class Section4Component {
 
-
-  constructor(private _formBuilder: FormBuilder) {
-    this.minDate = new Date();
-
-    this.maxDate = new Date();
-    this.maxDate.setDate(this.maxDate.getDate() + 10);
-  }
-
-  valu: string = '';
-
-
   firstFormGroup = this._formBuilder.group({
     firstCtrl: ['', Validators.required],
   });
@@ -28,27 +17,33 @@ export class Section4Component {
     secondCtrl: ['', Validators.required],
   });
 
+  selected !: Date | null;
+
+  // Celander
+
+  minDate !: Date;
+  maxDate !: Date;
   showSelectedDateComponent = false;
 
   onDateChange(event: any) {
     this.showSelectedDateComponent = true;
   }
 
-  minDate !: Date;
-  maxDate !: Date;
+  constructor(private _formBuilder: FormBuilder) {
+    // this.minDate = new Date();
 
+    // this.maxDate = new Date();
+    // this.maxDate.setDate(this.maxDate.getDate() + 10);
+  }
 
-  selected !: Date | null;
-
-  selectedAnimalCategory: string = ''; // مقدار انتخابی ذخیره می‌شود
-  displayedValue: string = ''; // مقداری که در اینپوت نمایش داده می‌شود
-
+  selectedAnimalCategory: string = '';
+  displayedValue: string = '';
 
   selectCategory(category: string) {
     this.selectedAnimalCategory = category;
     this.displayedValue = category;
   }
-
+  // Save & Show MenuButton In Input
 
 
 }

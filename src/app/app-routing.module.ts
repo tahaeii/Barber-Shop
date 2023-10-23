@@ -5,23 +5,12 @@ import { UserComponent } from './user/user.component';
 import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
-  { path: '', component:HomeComponent },
-  { path: 'user' , component:UserComponent}
+  { path: '', component: HomeComponent },
+  { path: 'user', component: UserComponent },
+  // { path: '**', component: PageNotFoundComponent },
+  //   { path: 'products/:id', component: ProductInfoComponent },
+  //   { path: 'products/info', component: ProductInfoComponent },
 ];
-// const routes: Routes = [
-//   { path: '', component: HomeComponent },
-//   { path: 'products', component: ProductListComponent },
-//   { path: 'products/:id', component: ProductInfoComponent },
-//   { path: 'products/info', component: ProductInfoComponent },
-//   {
-//     path: 'categories', component: CategoryListComponent, children: [
-//       { path: 'features', component: CategoryFeaturesComponent },
-//       { path: 'colors', component: CategoryColorsComponent },
-//       { path: '', redirectTo: 'features', pathMatch: 'full' }
-//     ]
-//   },
-//   { path: '**', component: PageNotFoundComponent },
-// ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

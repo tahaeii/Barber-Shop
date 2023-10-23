@@ -9,22 +9,18 @@ import { UsernameService } from '../username.service';
 })
 export class UserComponent {
 
-  
-
-  constructor(private router: Router , private username : UsernameService) { };
+  constructor(private router: Router, private username: UsernameService) { };
 
   nameValue: string = '';
   emailValue!: string;
   passwordValue!: number;
-
-  // flag: number = 0;
 
   userName: string = '';
   userEmail: string = '';
   userPassword: number = 0;
 
   getUser() {
-    
+
     this.userName = this.nameValue;
     this.username.getUserName(this.userName);
     this.userEmail = this.emailValue;
@@ -38,13 +34,12 @@ export class UserComponent {
     this.emailValue = '';
     this.passwordValue = 0;
 
-    // this.flag += 1;
-    // this.username.incrementFlag();
-
     this.username.isUser = true;
-    
 
     this.router.navigate(['/']);
+
+    // Local Storage Code For Remember Me
+    // localStorage.setItem('user' , JSON.stringify(this.dataUser));
 
   }
 }

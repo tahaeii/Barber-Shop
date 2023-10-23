@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
 import { UsernameService } from '../username.service';
 
 @Component({
@@ -9,6 +9,8 @@ import { UsernameService } from '../username.service';
 export class MenuComponent {
 
 
-  constructor(public username: UsernameService) { }
+  constructor(public username: UsernameService) { 
+    // UsernameService
+  }
 
 }
