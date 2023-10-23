@@ -1,0 +1,9 @@
+#sSection .ssection .about {
+    width: 90%;
+    height: inherit;
+    background-color: #FDF9F6;
+}
+
+.about .ssection-about-txt {
+    width: 35%;
+}

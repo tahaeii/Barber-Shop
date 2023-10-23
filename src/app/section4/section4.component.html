@@ -1,0 +1,177 @@
+<div id="foSection">
+    <div class="fosection">
+        <mat-stepper #stepper class="mat-stepper-style w-75 my-0 mx-auto">
+            <mat-step [stepControl]="firstFormGroup" errorMessage="Name is required.">
+                <!-- <form [formGroup]="firstFormGroup">
+                    <ng-template matStepLabel>Your Name</ng-template>
+                    <mat-form-field>
+                        <mat-label>Fisrt Name</mat-label>
+                        <input matInput placeholder="Your Name" formControlName="firstCtrl" required>
+                    </mat-form-field>
+                    <mat-form-field class="ms-5">
+                        <mat-label>Last Name</mat-label>
+                        <input matInput placeholder="Your Last Name" formControlName="firstCtrl" required>
+                    </mat-form-field>
+                    <div>
+                        <p>Go to a different step to see the error state</p>
+                        <button mat-button matStepperNext>Next</button>
+                    </div>
+                </form> -->
+
+                <div class="date-fix">
+
+
+                    <div class="calendar">
+
+
+                        <mat-card class="demo-inline-calendar-card">
+                            <mat-calendar [(selected)]="selected"></mat-calendar>
+                        </mat-card>
+
+
+
+                    </div>
+
+
+                    <div class="calendar-box">
+
+
+
+                        <!-- <button mat-button [matMenuTriggerFor]="animals">Animal index</button>
+                        <mat-menu #animals="matMenu">
+                            <button mat-menu-item [matMenuTriggerFor]="vertebrates">Vertebrates</button>
+                            <button mat-menu-item [matMenuTriggerFor]="invertebrates">Invertebrates</button>
+                        </mat-menu>
+
+                        <mat-menu #vertebrates="matMenu">
+                            <button mat-menu-item [matMenuTriggerFor]="fish">Fishes</button>
+                            <button mat-menu-item>Birds</button>
+                            <button mat-menu-item>Mammals</button>
+                        </mat-menu>
+
+                        <mat-menu #invertebrates="matMenu">
+                            <button mat-menu-item>Insects</button>
+                            <button mat-menu-item>Molluscs</button>
+                            <button mat-menu-item>Crustaceans</button>
+                            <button mat-menu-item>Corals</button>
+                            <button mat-menu-item>Arachnids</button>
+                            <button mat-menu-item>Velvet worms</button>
+                            <button mat-menu-item>Horseshoe crabs</button>
+                        </mat-menu>
+
+                        <mat-menu #fish="matMenu">
+                            <button mat-menu-item>Baikal oilfish</button>
+                            <button mat-menu-item>Bala shark</button>
+                            <button mat-menu-item>Ballan wrasse</button>
+                            <button mat-menu-item>Bamboo shark</button>
+                            <button mat-menu-item>Banded killifish</button>
+                        </mat-menu> -->
+
+
+
+
+
+                    </div>
+
+                    
+                    <mat-form-field class="example-form-field">
+                        <mat-label>Hair & Face Grooming</mat-label>
+                        <input matInput type="text" [(ngModel)]="displayedValue">
+                        <button matSuffix mat-icon-button [matMenuTriggerFor]="animals">
+                            <mat-icon>arrow_drop_up</mat-icon>
+                        </button>
+                        <mat-menu #menuTrigger="matMenu">
+                            <!-- <button mat-menu-item [matMenuTriggerFor]="animals">Animal index</button> -->
+                        </mat-menu>
+                    </mat-form-field>
+                    
+                    <mat-menu #animals="matMenu">
+                        <button mat-menu-item [matMenuTriggerFor]="vertebrates" >Vertebrates</button>
+                        <button mat-menu-item [matMenuTriggerFor]="invertebrates">Invertebrates</button>
+                    </mat-menu>
+
+                    <mat-menu #vertebrates="matMenu">
+                        <button mat-menu-item [matMenuTriggerFor]="fish">Fishes</button>
+                        <button mat-menu-item (click)="selectCategory('Birds')">Birds</button>
+                        <button mat-menu-item (click)="selectCategory('Mammals')">Mammals</button>
+                    </mat-menu>
+
+                    <mat-menu #invertebrates="matMenu">
+                        <button mat-menu-item (click)="selectCategory('Insects')">Insects</button>
+                        <button mat-menu-item (click)="selectCategory('Vertebrates')">Molluscs</button>
+                        <button mat-menu-item (click)="selectCategory('Vertebrates')">Crustaceans</button>
+                        <button mat-menu-item (click)="selectCategory('Vertebrates')">Corals</button>
+                        <button mat-menu-item (click)="selectCategory('Vertebrates')">Arachnids</button>
+                        <button mat-menu-item (click)="selectCategory('Vertebrates')">Velvet worms</button>
+                        <button mat-menu-item (click)="selectCategory('Vertebrates')">Horseshoe crabs</button>
+                    </mat-menu>
+
+                    <mat-menu #fish="matMenu">
+                        <button mat-menu-item (click)="selectCategory('Vertebrates')">Baikal oilfish</button>
+                        <button mat-menu-item (click)="selectCategory('Vertebrates')">Bala shark</button>
+                        <button mat-menu-item (click)="selectCategory('Vertebrates')">Ballan wrasse</button>
+                        <button mat-menu-item (click)="selectCategory('Vertebrates')">Bamboo shark</button>
+                        <button mat-menu-item (click)="selectCategory('Vertebrates')">Banded killifish</button>
+                    </mat-menu>
+
+
+                    <!-- <mat-form-field class="example-form-field">
+                        <mat-label>Hair & Face Grooming</mat-label>
+                        <input matInput type="text">
+                        <button matSuffix mat-icon-button>
+                            <mat-icon>arrow_drop_up</mat-icon>
+                        </button>
+                    </mat-form-field> -->
+
+
+
+                </div>
+
+
+
+
+            </mat-step>
+            <mat-step [stepControl]="secondFormGroup" errorMessage="Address is required.">
+                <form [formGroup]="secondFormGroup">
+                    <ng-template matStepLabel>Fill out your address</ng-template>
+
+                    <!-- <mat-form-field>
+                        <mat-label>Choose a date</mat-label>
+                        <input matInput [matDatepicker]="picker" [min]="minDate" [max]="maxDate"
+                            (dateChange)="onDateChange($event)">
+                        <mat-hint>MM/DD/YYYY</mat-hint>
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                    </mat-form-field>
+
+                    <ng-container *ngIf="showSelectedDateComponent">
+                        <app-section5></app-section5>
+                    </ng-container> -->
+
+
+                    <!-- <mat-card class="demo-inline-calendar-card">
+                        <mat-calendar [(selected)]="selected"></mat-calendar>
+                      </mat-card>
+                      <p>Selected date: {{selected}}</p> -->
+
+                    <div>
+
+                        <button mat-button matStepperPrevious>Back</button>
+                        <button mat-button matStepperNext>Next</button>
+                    </div>
+                </form>
+            </mat-step>
+            <mat-step>
+                <ng-template matStepLabel>Done</ng-template>
+                <p>You are now done.</p>
+                <div>
+                    <button mat-button matStepperPrevious>Back</button>
+                    <button mat-button (click)="stepper.reset()">Reset</button>
+                </div>
+            </mat-step>
+        </mat-stepper>
+
+
+
+    </div>
+</div>

@@ -1,0 +1,13 @@
+#foSection .fosection {
+    /* background: darkgray; */
+}
+
+.fosection .mat-stepper-style {
+    /* background: darkgray; */
+    padding: 0 55px 0;
+    height: 15rem;
+}
+
+.demo-inline-calendar-card {
+    width: 300px;
+  }

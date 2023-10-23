@@ -1,0 +1,32 @@
+.form-body {
+  height: 100%;
+  width: 80%;
+  margin: 7rem auto;
+  background: #FDF9F6;
+}
+.form-pic{
+  background: url('https://www.zarla.com/images/zarla-barber-bros-1x1-2400x2400-20210603-xrk4t364mjw7693q6rdk.png?crop=1:1,smart&width=250&dpr=2');
+  width: 100%;
+  height: 30%;
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 1rem;
+}
+
+.form-signin .form-floating:focus-within {
+  z-index: 2;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
