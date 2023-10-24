@@ -9,6 +9,8 @@ import {MatNativeDateModule} from '@angular/material/core';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import {MatCardModule} from '@angular/material/card';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatSelectModule} from '@angular/material/select';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatStepperModule} from '@angular/material/stepper';
 
@@ -26,6 +28,9 @@ import {MatStepperModule} from '@angular/material/stepper';
         MatProgressSpinnerModule,
         MatMenuModule,
         MatIconModule,
+        MatSelectModule,
+        MatCheckboxModule
+        
         
 
 
@@ -42,6 +47,8 @@ import {MatStepperModule} from '@angular/material/stepper';
         MatProgressSpinnerModule,
         MatMenuModule,
         MatIconModule,
+        MatSelectModule,
+        MatCheckboxModule,
         
 
      ]

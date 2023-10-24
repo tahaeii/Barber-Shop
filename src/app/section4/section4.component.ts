@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { Data } from '@angular/router';
 
 @Component({
@@ -30,20 +30,43 @@ export class Section4Component {
   }
 
   constructor(private _formBuilder: FormBuilder) {
-    // this.minDate = new Date();
+    this.minDate = new Date();
 
-    // this.maxDate = new Date();
-    // this.maxDate.setDate(this.maxDate.getDate() + 10);
+    this.maxDate = new Date();
+    this.maxDate.setDate(this.maxDate.getDate() + 10);
+
+    // Access To Celander Dates
   }
 
-  selectedAnimalCategory: string = '';
-  displayedValue: string = '';
+  Grooming: string = '';
+  otherServicesValue: string = '';
 
-  selectCategory(category: string) {
-    this.selectedAnimalCategory = category;
-    this.displayedValue = category;
+  groomingSelect(category: string) {
+    this.Grooming = category;
+    this.showSelectedDateComponent = true;
+  }
+
+  servicesSelect(category: string) {
+    this.otherServicesValue = category;
+    this.showSelectedDateComponent = true;
   }
   // Save & Show MenuButton In Input
+
+
+  disableSelect = new FormControl(false);
+
+  // Disable Grooming & OtherServices Button & Input
+
+  shwCmpnnt(event: any) {
+    if (event.checked) {
+      this.showSelectedDateComponent = true;
+    } else {
+      this.showSelectedDateComponent = false;
+    }
+  }
+
+  // Disable Grooming & OtherServices Button & Input When Radio
+  // Button Will Be True !
 
 
 }

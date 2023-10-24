@@ -23,81 +23,132 @@
                 </form> -->
                 <!-- This Comment Is For I Can Have Better Access To ***-->
 
-                <div class="date-fix">
+                <div class="date-fix d-flex">
 
-                    <div class="calendar">
-
-                        <mat-card class="demo-inline-calendar-card">
+                    <div class="calendar mt-5">
+                        <!-- <mat-card class="demo-inline-calendar-card">
                             <mat-calendar [(selected)]="selected"></mat-calendar>
-                        </mat-card>
+                        </mat-card> -->
 
-                    </div>
-
-
-                    <div class="calendar-box">
-
-                        <mat-form-field class="example-form-field">
-                            <mat-label>Hair & Face Grooming</mat-label>
-                            <input matInput type="text" [(ngModel)]="displayedValue">
-                            <button matSuffix mat-icon-button [matMenuTriggerFor]="animals">
-                                <mat-icon>arrow_drop_up</mat-icon>
-                            </button>
-                            <mat-menu #menuTrigger="matMenu">
-                                <!-- <button mat-menu-item [matMenuTriggerFor]="animals">Animal index</button> -->
-                            </mat-menu>
+                        <mat-form-field>
+                            <mat-label>Choose a date</mat-label>
+                            <input matInput [matDatepicker]="picker" [min]="minDate" [max]="maxDate">
+                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker></mat-datepicker>
                         </mat-form-field>
 
-                        <mat-menu #animals="matMenu">
-                            <button mat-menu-item [matMenuTriggerFor]="vertebrates">Vertebrates</button>
-                            <button mat-menu-item [matMenuTriggerFor]="invertebrates">Invertebrates</button>
-                        </mat-menu>
+                        <!-- ********************** Show Date ********************** -->
 
-                        <mat-menu #vertebrates="matMenu">
-                            <button mat-menu-item [matMenuTriggerFor]="fish">Fishes</button>
-                            <button mat-menu-item (click)="selectCategory('Birds')">Birds</button>
-                            <button mat-menu-item (click)="selectCategory('Mammals')">Mammals</button>
-                        </mat-menu>
-
-                        <mat-menu #invertebrates="matMenu">
-                            <button mat-menu-item (click)="selectCategory('Insects')">Insects</button>
-                            <button mat-menu-item (click)="selectCategory('Vertebrates')">Molluscs</button>
-                            <button mat-menu-item (click)="selectCategory('Vertebrates')">Crustaceans</button>
-                            <button mat-menu-item (click)="selectCategory('Vertebrates')">Corals</button>
-                            <button mat-menu-item (click)="selectCategory('Vertebrates')">Arachnids</button>
-                            <button mat-menu-item (click)="selectCategory('Vertebrates')">Velvet worms</button>
-                            <button mat-menu-item (click)="selectCategory('Vertebrates')">Horseshoe crabs</button>
-                        </mat-menu>
-
-                        <mat-menu #fish="matMenu">
-                            <button mat-menu-item (click)="selectCategory('Vertebrates')">Baikal oilfish</button>
-                            <button mat-menu-item (click)="selectCategory('Vertebrates')">Bala shark</button>
-                            <button mat-menu-item (click)="selectCategory('Vertebrates')">Ballan wrasse</button>
-                            <button mat-menu-item (click)="selectCategory('Vertebrates')">Bamboo shark</button>
-                            <button mat-menu-item (click)="selectCategory('Vertebrates')">Banded killifish</button>
-                        </mat-menu>
+                        <!-- <ng-container *ngIf="showSelectedDateComponent">
+                            <app-section5></app-section5>
+                        </ng-container> -->
 
                     </div>
 
+                    <div class="calendar-box mt-3 ms-5">
+
+                        <div class="groomingmenu">
+                            <mat-form-field class="example-form-field">
+                                <mat-label>Hair & Face Grooming</mat-label>
+                                <input [disabled]="disableSelect.value === true" matInput type="text"
+                                    [(ngModel)]="Grooming" (dateChange)="onDateChange($event)">
+                                <button [disabled]="disableSelect.value === true" matSuffix mat-icon-button
+                                    [matMenuTriggerFor]="groomingbutton">
+                                    <mat-icon>arrow_drop_up</mat-icon>
+                                </button>
+                            </mat-form-field>
+
+                            <div class="service-menu">
+                                <mat-menu #groomingbutton="matMenu">
+                                    <button mat-menu-item [matMenuTriggerFor]="headshave">Head Shave</button>
+                                    <button mat-menu-item [matMenuTriggerFor]="skinandhaier">Skin & Hair</button>
+                                    <button mat-menu-item [matMenuTriggerFor]="coloring">Natural Coloring</button>
+                                </mat-menu>
+
+                                <mat-menu #headshave="matMenu">
+                                    <button mat-menu-item (click)="groomingSelect('Haircut')">Haircut</button>
+                                    <button mat-menu-item (click)="groomingSelect('Shaving')">Shaving</button>
+                                    <button mat-menu-item (click)="groomingSelect('Hair & Face Grooming')">Hair & Face
+                                        Grooming</button>
+                                    <button mat-menu-item (click)="groomingSelect('Styling')">Styling</button>
+                                </mat-menu>
+
+                                <mat-menu #skinandhaier="matMenu">
+                                    <button mat-menu-item (click)="groomingSelect('Facial Cleansing')">Facial
+                                        Cleansing</button>
+                                    <button mat-menu-item (click)="groomingSelect('Skin Exfoliation')">Skin
+                                        Exfoliation</button>
+                                    <button mat-menu-item (click)="groomingSelect('Hair Massage & Wash')">Hair Massage &
+                                        Wash</button>
+                                </mat-menu>
+
+                                <mat-menu #coloring="matMenu">
+
+                                    <button mat-menu-item (click)="groomingSelect('Natural Hair Coloring')">Natural Hair
+                                        Coloring</button>
+                                    <button mat-menu-item
+                                        (click)="groomingSelect('Balayage & Hair Highlights')">Balayage & Hair
+                                        Highlights</button>
+                                    <button mat-menu-item (click)="groomingSelect('Facial Hair Coloring')">Facial Hair
+                                        Coloring</button>
+
+                                </mat-menu>
+                            </div>
+
+
+                        </div>
+
+                        <!-- ********************** Show Grooming Menu ********************** -->
+
+                        <div class="othermenu">
+                            <mat-form-field class="example-form-field">
+                                <mat-label>Other Services</mat-label>
+                                <input [disabled]="disableSelect.value === true" matInput type="text"
+                                    [(ngModel)]="otherServicesValue" (dateChange)="onDateChange($event)">
+                                <button [disabled]="disableSelect.value === true" matSuffix mat-icon-button
+                                    [matMenuTriggerFor]="otherbutton">
+                                    <mat-icon>arrow_drop_up</mat-icon>
+                                </button>
+                            </mat-form-field>
+
+                            <div class="service-menu">
+                                <mat-menu #otherbutton="matMenu">
+                                    <button mat-menu-item (click)="servicesSelect('Keratin & Straightening')">Keratin &
+                                        Straightening</button>
+                                    <button mat-menu-item (click)="servicesSelect('Face Spa')">Face Spa</button>
+                                    <button mat-menu-item (click)="servicesSelect('Photography')">Photography</button>
+                                </mat-menu>
+
+                            </div>
+
+                        </div>
+
+                        <!-- ********************** Show Other Menu ********************** -->
+
+                        <div class="ceremonie">
+                            <mat-checkbox [formControl]="disableSelect"
+                                (change)="shwCmpnnt($event)">Ceremonies?</mat-checkbox>
+                        </div>
+
+                        <!-- ********************** Show Ceremonies Button ********************** -->
+
+                    </div>
+
+                    <div class="datetime w-100">
+                        <ng-container *ngIf="showSelectedDateComponent">
+                            <app-section5></app-section5>
+                        </ng-container>
+                    </div>
                 </div>
 
 
             </mat-step>
+
+
             <mat-step [stepControl]="secondFormGroup" errorMessage="Address is required.">
                 <form [formGroup]="secondFormGroup">
                     <ng-template matStepLabel>Fill out your address</ng-template>
 
-                    <!-- <mat-form-field>
-                        <mat-label>Choose a date</mat-label>
-                        <input matInput [matDatepicker]="picker" [min]="minDate" [max]="maxDate"
-                            (dateChange)="onDateChange($event)">
-                        <mat-hint>MM/DD/YYYY</mat-hint>
-                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                        <mat-datepicker #picker></mat-datepicker>
-                    </mat-form-field>
-
-                    <ng-container *ngIf="showSelectedDateComponent">
-                        <app-section5></app-section5>
-                    </ng-container> -->
 
                     <div>
 
