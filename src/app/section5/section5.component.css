@@ -1,0 +1,36 @@
+#fiSection .fisection .appointment-time {
+    text-align: -webkit-center;
+}
+
+.appointment-time .time {
+    width: 31%;
+    padding: 10px 0;
+    line-height: 1.8;
+    border: 1.5px solid;
+    flex: 35%;
+    margin: 8px;
+}
+
+.time .time-title {
+    font-weight: bolder;
+    font-size: 18px;
+}
+
+.time .time-time {
+    font-size: 13px;
+    text-shadow: 0 0 18px #a0a0a0;
+    translate: 0 -3px;
+}
+
+.time .time-avable {
+    font-size: 11px;
+}
+.red-background{
+    background-color: red;
+}
+
+p {
+    margin: 0 !important;
+    padding: 0 !important;
+    font-family: Merienda;
+}

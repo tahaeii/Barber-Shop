@@ -6,8 +6,9 @@
     /* background: darkgray; */
     padding: 0 55px 0;
     height: 15rem;
+    width: 90%;
 }
 
 .demo-inline-calendar-card {
     width: 300px;
-  }
+}

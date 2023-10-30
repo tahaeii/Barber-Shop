@@ -1,6 +1,68 @@
 <!-- Section-5 Component -->
 <!-- That's Component For Show .. -->
 
-<p>section5 works!</p>
+<div *ngIf="showLoader; else content">
+    <mat-spinner style="margin-top: 3rem;
+    margin-left: 15rem;" [diameter]="70"></mat-spinner>
+</div>
+<ng-template #content>
+    <div id="fiSection">
+        <div class="fisection">
+
+            <div class="appointment-time d-flex flex-wrap ms-5">
+
+
+                <div class="time rounded-2">
+                    <div class="time-title">
+                        <p>Facial Cleansing</p>
+                    </div>
+                    <div class="time-time">
+                        <p>16.30 pm - 18.00 pm</p>
+                    </div>
+                    <div class="time-avable text-muted">
+                        <p>3 Space AvAvailable</p>
+                    </div>
+                </div>
+
+                <div class="time rounded-2">
+                    <div class="time-title">
+                        <p>Facial Cleansing</p>
+                    </div>
+                    <div class="time-time">
+                        <p>16.30 pm - 18.00 pm</p>
+                    </div>
+                    <div class="time-avable text-muted">
+                        <p>3 Space AvAvailable</p>
+                    </div>
+                </div>
+
+                <div class="time rounded-2">
+                    <div class="time-title">
+                        <p>Facial Cleansing</p>
+                    </div>
+                    <div class="time-time">
+                        <p>16.30 pm - 18.00 pm</p>
+                    </div>
+                    <div class="time-avable text-muted">
+                        <p>3 Space AvAvailable</p>
+                    </div>
+                </div>
+
+                <div class="time rounded-2">
+                    <div class="time-title">
+                        <p>Facial Cleansing</p>
+                    </div>
+                    <div class="time-time">
+                        <p>16.30 pm - 18.00 pm</p>
+                    </div>
+                    <div class="time-avable text-muted">
+                        <p>3 Space AvAvailable</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</ng-template>
 
 <!-- Section-5 Component End -->
