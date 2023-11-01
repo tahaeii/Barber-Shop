@@ -28,9 +28,11 @@
                         </div>
                     </div>
                     <div class="services">
+                        <div class="service-body service-body-bac"
+                            *ngFor="let service of services.slice(0, visibleServices)"
+                            [ngClass]="{'selected-service': service.isSelected , 'load-date': loadDate}"
+                            (click)="!loadDate ? selectedService(service) : null">
 
-                        <div class="service-body" *ngFor="let service of services.slice(0, visibleServices)"
-                            [ngClass]="{'selected-service': service.isSelected}" (click)="selectedService(service)">
                             <div class="service-price">
                                 <p>&#36;{{ service.price }}</p>
                             </div>
@@ -48,9 +50,15 @@
                         </div>
                     </div>
                     <div class="float-end" style="margin-right: 4rem;">
-                        <button class="btn btn-light me-2" (click)="loadMore()"
-                            *ngIf="visibleServices < services.length">Load More</button>
-                        <button class="btn btn-danger" (click)="showSelectedTitles()">Finish?</button>
+                        <button class="btn btn-light me-2" [ngClass]="{'load-date': loadDate}"
+                            (click)=" !loadDate ? loadMore() : null" *ngIf="visibleServices < services.length">Load
+                            More</button>
+                        <button class="btn btn-danger" (click)="showSelectedTitles()"
+                            [disabled]="diasableButton">Finish?</button>
+                    </div>
+                    <div *ngIf="showSpinner" class="spinner-overlay"
+                        style="position: relative;right: -33rem;top: -11rem;">
+                        <mat-spinner [diameter]="80"></mat-spinner>
                     </div>
                 </div>
             </mat-step>
@@ -191,8 +199,21 @@
             </mat-step> -->
             <!-- Old Code Commented -->
 
-            <mat-step [stepControl]="thirdFormGroup" errorMessage="Name is required.">
-                <form [formGroup]="firstFormGroup">
+
+            <mat-step [stepControl]="thirdFormGroup">
+                <ng-template matStepLabel>Select Date</ng-template>
+
+                <ng-container>
+                    <app-section5></app-section5>
+                </ng-container>
+
+                <div>
+                    <button mat-button matStepperPrevious (click)="resetService()">Back</button>
+                </div>
+            </mat-step>
+
+            <mat-step [stepControl]="fourthFormGroup" errorMessage="Name is required.">
+                <form [formGroup]="fourthFormGroup">
                     <ng-template matStepLabel>Your Name</ng-template>
                     <mat-form-field>
                         <mat-label>Fisrt Name</mat-label>

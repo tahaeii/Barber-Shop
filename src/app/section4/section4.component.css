@@ -150,3 +150,8 @@ input {
 .selected-service {
     box-shadow: 0 0 5px 0px #ff0000 !important;
 }
+
+.load-date {
+    filter: blur(1.5px);
+    cursor: wait !important;
+}
