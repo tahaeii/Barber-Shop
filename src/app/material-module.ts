@@ -13,7 +13,9 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import {MatStepperModule} from '@angular/material/stepper';
-
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatRadioModule} from '@angular/material/radio';
 
 @NgModule({
      imports:[
@@ -29,7 +31,11 @@ import {MatStepperModule} from '@angular/material/stepper';
         MatMenuModule,
         MatIconModule,
         MatSelectModule,
-        MatCheckboxModule
+        MatCheckboxModule,
+        MatDialogModule,
+        MatGridListModule,
+        MatRadioModule
+        
         
         
 
@@ -49,6 +55,9 @@ import {MatStepperModule} from '@angular/material/stepper';
         MatIconModule,
         MatSelectModule,
         MatCheckboxModule,
+        MatDialogModule,
+        MatGridListModule,
+        MatRadioModule
         
 
      ]
