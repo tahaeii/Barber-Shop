@@ -10,12 +10,8 @@ input {
 .fosection .mat-stepper-style {
     /* background: darkgray; */
     padding: 0 55px 0;
-    height: 15rem;
+    /* height: 15rem; */
     width: 90%;
-}
-
-.demo-inline-calendar-card {
-    width: 300px;
 }
 
 .stepper-text {
@@ -154,4 +150,32 @@ input {
 .load-date {
     filter: blur(1.5px);
     cursor: wait !important;
+}
+
+.load-date-user {
+    filter: blur(3.5px);
+    cursor: wait !important;
+}
+
+.steppr-condition .steppr-condition-contain {
+    position: relative;
+    left: 25rem;
+    top: -11rem;
+    width: fit-content;
+    text-align: center;
+}
+
+.steppr-condition-contain p:nth-child(1) {
+    margin: 0;
+    font-size: 3rem;
+    color: #dc3545;
+    font-weight: bold;
+}
+
+.steppr-condition-contain p:nth-child(2) {
+    font-size: 2rem;
+}
+
+.steppr-condition-contain a {
+    font-size: x-small;
 }

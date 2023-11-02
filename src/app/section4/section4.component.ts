@@ -1,14 +1,15 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormControl, Validators } from '@angular/forms';
 import { MatStepper } from '@angular/material/stepper';
 import { Data } from '@angular/router';
+import { ServiceService } from '../service.service';
 
 @Component({
   selector: 'app-section4',
   templateUrl: './section4.component.html',
   styleUrls: ['./section4.component.css']
 })
-export class Section4Component {
+export class Section4Component implements OnInit {
 
   @ViewChild('stepper') stepper !: MatStepper;
 
@@ -28,62 +29,9 @@ export class Section4Component {
     secondCtrl: ['', Validators.required],
   });
 
-  // Draft Start ***********************************************************
 
-  // selected !: Date | null;
+  constructor(private _formBuilder: FormBuilder, public srvc: ServiceService) { }
 
-  // Celander
-
-  // minDate !: Date;
-  // maxDate !: Date;
-  // showSelectedDateComponent = false;
-
-  // onDateChange(event: any) {
-  //   this.showSelectedDateComponent = true;
-  // }
-
-  constructor(private _formBuilder: FormBuilder) {
-    // this.minDate = new Date();
-
-    // this.maxDate = new Date();
-    // this.maxDate.setDate(this.maxDate.getDate() + 10);
-
-    // Access To Celander Dates
-  }
-
-  // Grooming: string = '';
-  // otherServicesValue: string = '';
-
-  // groomingSelect(category: string) {
-  //   this.Grooming = category;
-  //   this.showSelectedDateComponent = true;
-  // }
-
-  // servicesSelect(category: string) {
-  //   this.otherServicesValue = category;
-  //   this.showSelectedDateComponent = true;
-  // }
-  // Save & Show MenuButton In Input
-
-
-  // disableSelect = new FormControl(false);
-
-  // Disable Grooming & OtherServices Button & Input
-
-  // shwCmpnnt(event: any) {
-  //   if (event.checked) {
-  //     this.showSelectedDateComponent = true;
-  //   } else {
-  //     this.showSelectedDateComponent = false;
-  //   }
-  // }
-
-  // Disable Grooming & OtherServices Button & Input When Radio
-  // Button Will Be True !
-
-  // Draft End ***********************************************************
-  // Draft was for old design !
-  // Again Start ..
 
   services = [
     {
@@ -153,21 +101,26 @@ export class Section4Component {
   ]
   // An array of objects
 
-  isSelected !: boolean;
-  selectedTitles: string[] = [];
-  visibleServices: number = 6;
+  isSelected !: boolean; // is service-body selected?
+  selected: string[] = []; // save the service-body's id
+  visibleServices: number = 6; // load more
+  loadDate: boolean = false; // loading style
+  loaderAnimation = false; // Spinner loader
   diasableButton = true;
-  showSpinner = false;
-  loadDate: boolean = false;
+
+
+  ngOnInit(): void {
+
+  }
 
   selectedService(service: any) {
     service.isSelected = !service.isSelected;
     if (service.isSelected) {
-      this.selectedTitles.push(service.id);
+      this.srvc.saveSelected(service.id);
     } else {
-      this.selectedTitles = this.selectedTitles.filter(id => id !== service.id);
+      this.srvc.removeSelected(service.id);
     }
-    this.diasableButton = this.selectedTitles.length <= 0;
+    this.diasableButton = this.srvc.selectedCheck().length <= 0;
     // For disable & anable button when user dont select servise
   }   // Select a service & save id
 
@@ -179,13 +132,13 @@ export class Section4Component {
     this.services.forEach(service => {
       service.isSelected = false;
     }); // Unselected Service that user was selected
-    this.showSpinner = true;
+    this.loaderAnimation = true;
     this.diasableButton = true;
     this.loadDate = true;
 
     setTimeout(() => {
-      this.showSpinner = false;
-      this.diasableButton = false;
+      this.loaderAnimation = false;
+      this.diasableButton = true;
       this.stepper.next();
     }, 3000);
     // Show Loader
@@ -193,6 +146,8 @@ export class Section4Component {
 
   resetService() {
     this.loadDate = false;
+    this.diasableButton = true;
+    this.srvc.setSelected([]);
     this.visibleServices = 6;
   }
 }

@@ -16,6 +16,7 @@ import {MatStepperModule} from '@angular/material/stepper';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatRadioModule} from '@angular/material/radio';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 @NgModule({
      imports:[
@@ -34,7 +35,8 @@ import {MatRadioModule} from '@angular/material/radio';
         MatCheckboxModule,
         MatDialogModule,
         MatGridListModule,
-        MatRadioModule
+        MatRadioModule,
+        MatTooltipModule,
         
         
         
@@ -57,7 +59,8 @@ import {MatRadioModule} from '@angular/material/radio';
         MatCheckboxModule,
         MatDialogModule,
         MatGridListModule,
-        MatRadioModule
+        MatRadioModule,
+        MatTooltipModule,
         
 
      ]

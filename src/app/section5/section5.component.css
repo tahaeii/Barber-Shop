@@ -1,14 +1,18 @@
 #fiSection .fisection .appointment-time {
     text-align: -webkit-center;
+    padding: 2rem;
+    margin: 0 auto;
 }
 
 .appointment-time .time {
-    width: 31%;
     padding: 10px 0;
     line-height: 1.8;
-    border: 1.5px solid;
-    flex: 35%;
+    /* border: 1.5px solid; */
+    flex: 10%;
     margin: 8px;
+    border-radius: 20%;
+    box-shadow: 0px 0rem 10px rgba(0, 0, 0, 0.175);
+    filter: contrast(0.6);
 }
 
 .time .time-title {

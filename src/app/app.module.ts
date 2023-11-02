@@ -20,6 +20,7 @@ import { MaterialPersianDateAdapter, PERSIAN_DATE_FORMATS } from './persian-date
 import { Section6Component } from './section6/section6.component';
 import { SectionPopupComponent } from './section-popup/section-popup.component';
 import { DiscardComponent } from './discard/discard.component';
+import { ReservedComponent } from './reserved/reserved.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { DiscardComponent } from './discard/discard.component';
     Section6Component,
     SectionPopupComponent,
     DiscardComponent,
+    ReservedComponent
   ],
   imports: [
     BrowserModule,
