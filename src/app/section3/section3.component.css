@@ -1,6 +1,6 @@
-.services-card-bacground-1 {
+/* .services-card-bacground-1 {
     border-radius: 180px;
-    background: url('https://s3-alpha-sig.figma.com/img/3e19/bbe9/297f251e6ddbe1503e300f97be4eb934?Expires=1699833600&Signature=MeMKWkNxCBy7qBGNhYqVPQx85tPn4KtIrizyGXpZh8GD4lqEZcrJPyyw4HU8eBfEprBRSjRpVl3bamfnEvOvnpA4lueEloj8vu~Ipc~ahW4xS-p916ZBm6geFIzdOezNYvHHqVMe7CMhgKGtV2V0fCTjRzlbF4k934HW4rBp-LLgrKnPq-VkX-EoIEZxhBI3659EWhi-fOj3hSC8zDaSXM7LzKUR90bF6tWDdmUlJ68WRpWbK2tn6qCC5BTdghdD6h~iIRqEV2rgRKm064ZpQ8mX7~HhY452TS57EKe~SniJZmaBtXP6V~q~BaCzC0SemdKj5fCU7D~PeimhlReivQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4');
+    background: url('../../assets/hair-styles.png');
     width: 180px;
     height: 180px;
     background-size: cover;
@@ -11,7 +11,7 @@
 
 .services-card-bacground-2 {
     border-radius: 180px;
-    background: url('https://s3-alpha-sig.figma.com/img/b78f/9dcd/6e4a1ee22f707728a9972a12aae7aa2f?Expires=1699833600&Signature=eqTr7lv10b9jb7lGSoBwI~MZbQOkLZRtrCwjuAURyT63B9oWSaym4cDf3zOvzN1DR1ea0Inxy5GQT1EFBbysHfEhTIUI4GVNgurHImpaGg3x0BK8htknwwk58-l5B8yP~-zcsFGEZ~WYC5c8-951iEVtiKJH0g8NpXpn1WbTYpc2MqYVQKfCJhUI~8WkbEAG3mpa5a1XlfXrrVpgKmZJRivfi-~qPOQ4hwOHXTpUWO1OziL8hJkptArWiHnqYr7QFbIsb7mREsHhBp1zSWKyaQObHHTJAHug5kGTf72ebTwngrxk~jq0NeGnpZo6kvgaE5Q6iKImkDoe-PdbJcw1hg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4');
+    background: url('../../assets/beard-trim.png');
     width: 180px;
     height: 180px;
     background-size: cover;
@@ -22,7 +22,7 @@
 
 .services-card-bacground-3 {
     border-radius: 180px;
-    background: url('https://s3-alpha-sig.figma.com/img/17f0/55ca/8454f80ee7c669225c6b59cf7acf420e?Expires=1699833600&Signature=b20a986NuRR5pOM6aDMC9PUYa1ieuC5N0Q0vRVP~UEJjWY1Qt4mZZ0HIQk-I7BR2ZPNDm5z7q3bGVVBpy1hw-U968fXFt3MIgFzAvRGj5LCJsu-J0ZcKSffPyyYwz8ay7dG-9bWU~-L3B4DlsGvHxJRDouBx~nJGk3YuwV~RzD7xWQTdkWiwWNcBeVKsL0H~7AE8acsocKhmdy7y68WKziCklgrzH7CCwJzTE0vhKk-1S33-FsbJScM6zmO6SQJf~g~3yWBUlZv7T6CNEruvqlsoqskAY2fHEajQiA1VqI5iXAPrEoBqXs1lbJ5X6r4GuBEk8Qf32ZizWoaM-8HQXQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4');
+    background: url('../../assets/hot-shave.png');
     width: 180px;
     height: 180px;
     background-size: cover;
@@ -33,7 +33,7 @@
 
 .services-card-bacground-4 {
     border-radius: 180px;
-    background: url('https://s3-alpha-sig.figma.com/img/e654/2abc/2ff93e6d60e60d8cda5ac1cce4b3aea8?Expires=1699833600&Signature=jZK7AblUx7CxILybyE7Np47L-bbWbhjM6WZmokCxHWEkv~RlXEyoFotEAaxYrbwRGZ8BHPT16todKob4DMEjQIAsX3d6N4bYrGF4RxXzMiH2EEcQNvA2fRpwLA0LmxrZHmoN8glw7PvIDeom7rQnKtDheHmkv5U3WloO9aNElco7DTMDr4CghxD0zbJKnMtcJu32AsB6JwMgwpP1Ve-lY8bWvtMw6849Ngum395l135SVDq94dWnVYhG87MMZ7f2L8wCY4vrml6PRlufBGbAxBAsJOTB7R4VBWBhIlSYy-L22Q4lS0DK5qxiWDAitPHeib~0YdpAmmWpyg9AGkB8xQ__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4');
+    background: url('../../assets/hair-shampo.png');
     width: 180px;
     height: 180px;
     background-size: cover;
@@ -55,4 +55,5 @@
 
 .services-bacground-color-1 {
     background-color: #dfb892;
-}
+} */
+

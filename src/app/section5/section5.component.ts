@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, Renderer2 } from '@angular/core';
 
 @Component({
     selector: 'app-section5',
@@ -7,11 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class Section5Component implements OnInit {
 
-    showLoader: boolean = true;
+    constructor(private renderer: Renderer2, private el: ElementRef) { }
 
     ngOnInit() {
-        setTimeout(() => {
-            this.showLoader = false;
-        }, 3000);
-    }
+        const script = this.renderer.createElement('script');
+        script.src = 'assets/myscript.js';
+        this.renderer.appendChild(this.el.nativeElement, script);
+    } // Show the swiper code
+
+    
 }

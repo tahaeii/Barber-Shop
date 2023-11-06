@@ -1,19 +1,19 @@
 <!-- Section-4 Component -->
-<!-- That's Component For Show Calendar & Appointment -->
+<!-- That's Component For Select The Services & Select The Date & Reserved -->
 
-<div id="foSection">
+<section id="foSection">
     <div class="fosection">
         <mat-stepper #stepper class="mat-stepper-style my-0 mx-auto">
-
             <mat-step [stepControl]="firstFormGroup" errorMessage="Name is required.">
                 <ng-template matStepLabel>Start Appointment</ng-template>
                 <div class="stepper-text text-center">
                     <div class="stepper-text-head">
-                        <h4>Appointment Now !</h4>
+                        <h2>App<span style="color: #dc3545;">o</span>intment Now !</h2>
                     </div>
                     <div class="stepper-text-content">
                         <p class="text-muted">
-                            You can save time by booking in advance. Indeed, get a 20% discount!</p>
+                            You can save time by booking in advance. Indeed, get a <strong
+                                style="color: #dc3545;">20%</strong> discount!</p>
                     </div>
                     <button class="btn btn-danger" matStepperNext>Let's Go!</button>
                 </div>
@@ -68,7 +68,7 @@
                 <ng-template matStepLabel>Select Date</ng-template>
 
                 <div class="steppr-condition">
-                    <app-section5 [ngClass]="{'load-date-user': !srvc.isUser}"></app-section5>
+                    <app-date [ngClass]="{'load-date-user': !srvc.isUser}"></app-date>
 
                     <div *ngIf="!srvc.isUser">
                         <div class="steppr-condition-contain">
@@ -117,9 +117,7 @@
 
         </mat-stepper>
 
-
-
     </div>
-</div>
+</section>
 
 <!-- Section-4 Component End -->

@@ -1,5 +1,5 @@
 #fSection .fsection .fsection-bacground {
-    background: linear-gradient(0deg, rgba(46, 34, 0, 0.30) 0%, rgba(46, 34, 0, 0.30) 100%), url('../../images/banner.png'), lightgray 50% / cover no-repeat;
+    background: linear-gradient(0deg, rgba(46, 34, 0, 0.30) 0%, rgba(46, 34, 0, 0.30) 100%), url('../../assets/banner.png'), lightgray 50% / cover no-repeat;
     height: 850px;
     background-attachment: fixed;
 }

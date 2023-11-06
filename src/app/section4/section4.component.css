@@ -19,7 +19,7 @@ input {
     line-height: 3.3;
 }
 
-.stepper-text .stepper-text-head h4 {
+.stepper-text .stepper-text-head h2 {
     font-size: 3.5rem;
 }
 
@@ -143,6 +143,33 @@ input {
     border-radius: 40px 4px 4px 0px;
 }
 
+.service-picture .service-picture-bac-7 {
+    background-image: url('../../assets/kids-cuts.jpg');
+    width: 100%;
+    background-size: cover;
+    height: 100%;
+    background-position: center;
+    border-radius: 40px 4px 4px 0px;
+}
+
+.service-picture .service-picture-bac-8 {
+    background-image: url('../../assets/keratin.jpg');
+    width: 100%;
+    background-size: cover;
+    height: 100%;
+    background-position: center;
+    border-radius: 40px 4px 4px 0px;
+}
+
+.service-picture .service-picture-bac-9 {
+    background-image: url('../../assets/all-service.jpg');
+    width: 100%;
+    background-size: cover;
+    height: 100%;
+    background-position: center;
+    border-radius: 40px 4px 4px 0px;
+}
+
 .selected-service {
     box-shadow: 0 0 5px 0px #ff0000 !important;
 }
@@ -179,3 +206,7 @@ input {
 .steppr-condition-contain a {
     font-size: x-small;
 }
+
+::ng-deep .mat-horizontal-stepper-header {
+    pointer-events: none !important;
+}/* limit the steppr */

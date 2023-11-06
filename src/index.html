@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="utf-8">
   <title>BarberShop</title>
@@ -11,8 +12,39 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <!-- <link rel="stylesheet" href="assets/fontawesome/css/fontawesome.min.css">  -->
 </head>
+
 <body>
+
+  <script>
+    function playAnimation(entries, observer) {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          var h2Element = entry.target;
+          h2Element.style.animation = 'none';
+          void h2Element.offsetWidth;
+          h2Element.style.animation = null;
+        }
+      });
+    }
+
+    var options = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.1
+    };
+
+    var observer = new IntersectionObserver(playAnimation, options);
+
+    document.addEventListener('DOMContentLoaded', function () {
+      var h2Elements = document.querySelectorAll('h2');
+      h2Elements.forEach(function (h2Element) {
+        observer.observe(h2Element);
+      });
+    });
+  </script> <!-- Title Animation Script -->
+
   <!-- <script src="https://kit.fontawesome.com/f9acdd053e.js" crossorigin="anonymous"></script> Font Awesome -->
   <app-root></app-root>
 </body>
+
 </html>

@@ -1,7 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import { FormBuilder, Validators } from '@angular/forms';
 import { MatStepper } from '@angular/material/stepper';
-import { Data } from '@angular/router';
 import { ServiceService } from '../service.service';
 
 @Component({
@@ -84,18 +83,26 @@ export class Section4Component implements OnInit {
     },
     {
       id: 7,
-      title: 'Coloring',
+      title: 'Kids Cuts',
       description: 'Drawing, cutting and styling the beard!',
-      price: 13,
-      pictureClass: 'service-picture-bac-5',
+      price: 14,
+      pictureClass: 'service-picture-bac-7',
       isSelected: false
     },
     {
       id: 8,
-      title: 'Photography',
+      title: 'Keratin',
       description: 'Keratin & Straightening for messy & curly hair',
-      price: 17,
-      pictureClass: 'service-picture-bac-6',
+      price: 23,
+      pictureClass: 'service-picture-bac-8',
+      isSelected: false
+    },
+    {
+      id: 9,
+      title: 'All Service',
+      description: 'Keratin & Straightening for messy & curly hair',
+      price: 23,
+      pictureClass: 'service-picture-bac-9',
       isSelected: false
     },
   ]
@@ -125,7 +132,7 @@ export class Section4Component implements OnInit {
   }   // Select a service & save id
 
   loadMore() {
-    this.visibleServices += 2;
+    this.visibleServices += 5;
   } // Load more button
 
   showSelectedTitles() {

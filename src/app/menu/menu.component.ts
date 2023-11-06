@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { SectionPopupComponent } from '../section-popup/section-popup.component';
-import { MatDialog } from '@angular/material/dialog';
 import { ServiceService } from '../service.service';
 
 @Component({
@@ -11,14 +9,9 @@ import { ServiceService } from '../service.service';
 export class MenuComponent {
 
 
-  constructor(public username: ServiceService, public dialog: MatDialog) {
+  constructor(public username: ServiceService) {
     // UsernameService
   }
 
-  openDialog(): void {
-    const dialogRef = this.dialog.open(SectionPopupComponent, {
-      width: '640px', disableClose: true
-    });
-  }
 
 }

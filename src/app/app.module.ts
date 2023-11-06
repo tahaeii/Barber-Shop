@@ -18,9 +18,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
 import { MaterialPersianDateAdapter, PERSIAN_DATE_FORMATS } from './persian-dateadapter';
 import { Section6Component } from './section6/section6.component';
-import { SectionPopupComponent } from './section-popup/section-popup.component';
-import { DiscardComponent } from './discard/discard.component';
 import { ReservedComponent } from './reserved/reserved.component';
+import { Section7Component } from './section7/section7.component';
+import { DateComponent } from './section4/date/date.component';
 
 @NgModule({
   declarations: [
@@ -34,9 +34,9 @@ import { ReservedComponent } from './reserved/reserved.component';
     Section4Component,
     Section5Component,
     Section6Component,
-    SectionPopupComponent,
-    DiscardComponent,
-    ReservedComponent
+    ReservedComponent,
+    Section7Component,
+    DateComponent
   ],
   imports: [
     BrowserModule,
