@@ -95,14 +95,15 @@ slider2.addEventListener('mouseup', () => {
 slider1.addEventListener('mousemove', (e) => {
     if (!isDragging) return;
     const x = e.pageX - slider1.offsetLeft;
-    const walk = (x - startX) * 1; 
+    const walk = (x - startX) * 1;
     slider1.scrollLeft = scrollLeft - walk;
 });
 slider2.addEventListener('mousemove', (e) => {
     if (!isDragging) return;
     const x = e.pageX - slider2.offsetLeft;
-    const walk = (x - startX) * 1; 
+    const walk = (x - startX) * 1;
     slider2.scrollLeft = scrollLeft - walk;
 });
 // MouseMove
 
+// Swiper Js End -- Section 5

@@ -10,10 +10,15 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+    crossorigin="anonymous"></script>
+  <script src="assets/jquery.min.js.download"></script>
+
   <!-- <link rel="stylesheet" href="assets/fontawesome/css/fontawesome.min.css">  -->
 </head>
 
-<body>
+<body data-bs-spy="scroll" data-bs-target="#navbar-example">
 
   <script>
     function playAnimation(entries, observer) {
@@ -42,6 +47,23 @@
       });
     });
   </script> <!-- Title Animation Script -->
+
+  <script>
+    window.addEventListener("scroll", e => {
+      let navbarLinks = document.querySelectorAll("nav a");
+      navbarLinks.forEach(link => {
+        let section = document.querySelector(link.hash);
+        if (scrollPos + 150 > section.offsetTop && scrollPos + 150 < section.offsetTop + section.offsetHeight) {
+          link.classList.add("active");
+        } else {
+          link.classList.remove("active");
+        }
+      });
+    });
+  </script> <!-- ScrollSpy -->
+
+  <script src="./assets/isotope.pkgd.js.download"></script>
+  <script src="./assets/jquery.magnific-popup.js.download"></script>
 
   <!-- <script src="https://kit.fontawesome.com/f9acdd053e.js" crossorigin="anonymous"></script> Font Awesome -->
   <app-root></app-root>

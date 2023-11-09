@@ -21,6 +21,7 @@ import { Section6Component } from './section6/section6.component';
 import { ReservedComponent } from './reserved/reserved.component';
 import { Section7Component } from './section7/section7.component';
 import { DateComponent } from './section4/date/date.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { DateComponent } from './section4/date/date.component';
     Section6Component,
     ReservedComponent,
     Section7Component,
-    DateComponent
+    DateComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

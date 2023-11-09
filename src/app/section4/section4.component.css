@@ -12,6 +12,8 @@ input {
     padding: 0 55px 0;
     /* height: 15rem; */
     width: 90%;
+    translate: 0rem -5rem;
+    margin-bottom: -14rem !important;
 }
 
 .stepper-text {
@@ -21,6 +23,7 @@ input {
 
 .stepper-text .stepper-text-head h2 {
     font-size: 3.5rem;
+    height: 61px;
 }
 
 .stepper-text .stepper-text-content p {
