@@ -7,6 +7,7 @@
             <path fill="#dc3545" fill-opacity="0.9" d="M0,160L720,224L1440,160L1440,0L720,0L0,0Z"></path>
         </svg>
         <mat-stepper #stepper class="mat-stepper-style my-0 mx-auto">
+
             <mat-step [stepControl]="firstFormGroup" errorMessage="Name is required.">
                 <ng-template matStepLabel>Start Appointment</ng-template>
                 <div class="stepper-text text-center">
@@ -69,11 +70,27 @@
 
             <mat-step [stepControl]="thirdFormGroup">
                 <ng-template matStepLabel>Select Date</ng-template>
-
                 <div class="steppr-condition">
-                    <app-date [ngClass]="{'load-date-user': !srvc.isUser}"></app-date>
+                   
+                    <div class="date-fix d-flex">
+                        <div class="calendar mt-5">
+                            <mat-form-field>
+                                <mat-label>Choose a date</mat-label>
+                                <input matInput [matDatepickerFilter]="myFilter" [matDatepicker]="picker" [min]="minDate" [max]="maxDate">
+                                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                                <mat-datepicker #picker>
+                                    <mat-datepicker-actions>
+                                        <button mat-button matDatepickerCancel>Cancel</button>
+                                        <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
+                                      </mat-datepicker-actions>
+                                </mat-datepicker>
+                            </mat-form-field>
+                        </div>
+                    </div>
 
-                    <div *ngIf="!srvc.isUser">
+                    <app-date [ngClass]="{'load-date-user': srvc.isUser}"></app-date>
+
+                    <div *ngIf="srvc.isUser">
                         <div class="steppr-condition-contain">
                             <p>Wait !!!</p>
                             <p class="text-muted">It's better to login first !</p>
@@ -90,8 +107,9 @@
                 </div>
             </mat-step>
 
-            <mat-step [stepControl]="fourthFormGroup" errorMessage="Name is required.">
-                <form [formGroup]="fourthFormGroup">
+            <mat-step [stepControl]="fourthFormGroup">
+                <form class="stepper-form" [formGroup]="fourthFormGroup">
+
                     <ng-template matStepLabel>Your Name</ng-template>
                     <mat-form-field>
                         <mat-label>Fisrt Name</mat-label>
@@ -105,6 +123,7 @@
                     <div>
                         <p>Please Enter Your Name & Last Name!</p>
                         <button mat-button matStepperNext>Next</button>
+                        <button mat-button matStepperPrevious>Back</button>
                     </div>
                 </form>
             </mat-step>
@@ -119,7 +138,9 @@
             </mat-step>
 
         </mat-stepper>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#dc3545" fill-opacity="0.9" d="M0,160L720,224L1440,160L1440,320L720,320L0,320Z"></path></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill="#dc3545" fill-opacity="0.9" d="M0,160L720,224L1440,160L1440,320L720,320L0,320Z"></path>
+        </svg>
     </div>
 </section>
 

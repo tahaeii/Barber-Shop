@@ -48,4 +48,42 @@ export class ServiceService {
     this.getUserName(this.userName);
   }
 
+  // ////////////////////////////////////////////////////////////
+
+  private dateSelected: number[] = []; // save the service-body's id
+
+  dataSelectedCheck(): number[] {
+    return this.dateSelected;
+  }
+
+  saveDateSelected(id: number): void {
+    this.dateSelected.push(id);
+    console.log(this.dateSelected);
+  }
+
+  removeDateSelected(itemId: number): void {
+    this.dateSelected = this.dateSelected.filter(id => id !== itemId);
+    console.log(this.dateSelected)
+  }
+
+  reservedData = [
+    {
+      name : this.user,
+      services : this.selected,
+      date : this.dateSelected,
+    }
+  ]
+
+  fillReservedData(): void {
+    this.reservedData = [
+      {
+        name: this.user,
+        services: this.selected,
+        date: this.dateSelected,
+      }
+    ];
+    console.log(this.reservedData)
+  }
+  
+  
 }

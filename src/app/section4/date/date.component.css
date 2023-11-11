@@ -13,6 +13,7 @@
     border-radius: 20%;
     box-shadow: 0px 0rem 10px rgba(0, 0, 0, 0.175);
     filter: contrast(0.6);
+    cursor: pointer;
 }
 
 .time .time-title {
@@ -38,4 +39,8 @@ p {
     margin: 0 !important;
     padding: 0 !important;
     font-family: Merienda;
+}
+
+.selected-service {
+    box-shadow: 0 0 5px 0px #ff0000 !important;
 }

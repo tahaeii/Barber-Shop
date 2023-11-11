@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { MatStepper } from '@angular/material/stepper';
 import { ServiceService } from '../service.service';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-section4',
@@ -29,7 +30,30 @@ export class Section4Component implements OnInit {
   });
 
 
-  constructor(private _formBuilder: FormBuilder, public srvc: ServiceService) { }
+  minDate !: Date;
+  maxDate !: Date;
+
+  constructor(private _formBuilder: FormBuilder, public srvc: ServiceService) {
+
+    this.minDate = new Date();
+
+    this.maxDate = new Date();
+    this.maxDate.setDate(this.maxDate.getDate() + 30);
+
+    // Access To Celander Dates
+  }
+
+  myFilter = (d: Date | null): boolean => {
+    // const jalaliDate = moment(d).format('jYYYY/jM/jD');
+    // const dayOfWeek = moment(jalaliDate, 'jYYYY/jM/jD').day();
+    // return dayOfWeek !== 5 && dayOfWeek !== 6;
+
+    if (!d) {
+      return false;
+    }
+    const jalaliDate = moment(d).format('dddd'); // dddd means the day of the week
+    return jalaliDate !== 'جمعه';
+  }// Prevent Friday and Saturday from being selected.
 
 
   services = [

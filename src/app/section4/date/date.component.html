@@ -6,54 +6,25 @@
 
         <div class="appointment-time d-flex flex-wrap ms-5">
 
-            <div class="time">
+            <div class="time" *ngFor="let date of datee" [ngClass]="{'selected-service': date.isSelected}"
+                (click)="selectedDate(date)">
+
                 <div class="time-title">
-                    <p>Facial Cleansing</p>
+                    <p>{{ date.title }}</p>
                 </div>
                 <div class="time-time">
-                    <p>16.30 pm - 18.00 pm</p>
+                    <p>{{ date.time }}</p>
                 </div>
                 <div class="time-avable text-muted">
-                    <p>3 Space AvAvailable</p>
+                    <p>{{ date.avable + ' Space AvAvailable' }}</p>
                 </div>
             </div>
 
-            <div class="time">
-                <div class="time-title">
-                    <p>Facial Cleansing</p>
-                </div>
-                <div class="time-time">
-                    <p>16.30 pm - 18.00 pm</p>
-                </div>
-                <div class="time-avable text-muted">
-                    <p>3 Space AvAvailable</p>
-                </div>
-            </div>
+        </div>
 
-            <div class="time">
-                <div class="time-title">
-                    <p>Facial Cleansing</p>
-                </div>
-                <div class="time-time">
-                    <p>16.30 pm - 18.00 pm</p>
-                </div>
-                <div class="time-avable text-muted">
-                    <p>3 Space AvAvailable</p>
-                </div>
-            </div>
-
-            <div class="time">
-                <div class="time-title">
-                    <p>Facial Cleansing</p>
-                </div>
-                <div class="time-time">
-                    <p>16.30 pm - 18.00 pm</p>
-                </div>
-                <div class="time-avable text-muted">
-                    <p>3 Space AvAvailable</p>
-                </div>
-            </div>
-
+        <div class="float-end" style="margin-right: 4rem;">
+            <button class="btn btn-danger" matStepperNext (click)="nexStepper()"
+                [disabled]="diasableButton">Finish?</button>
         </div>
     </div>
 </section>
