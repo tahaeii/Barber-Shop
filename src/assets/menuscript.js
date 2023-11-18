@@ -15,7 +15,7 @@ window.addEventListener("scroll", e => {
 
 });
 
-const festivalDate = new Date("2023-11-19T00:00:00Z").getTime();
+const festivalDate = new Date("2024-01-19T00:00:00Z").getTime();
 const interval = setInterval(function () {
     const now = new Date().getTime();
     const timeLeft = festivalDate - now;
