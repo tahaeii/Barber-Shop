@@ -22,6 +22,7 @@ import { ReservedComponent } from './reserved/reserved.component';
 import { Section7Component } from './section7/section7.component';
 import { DateComponent } from './section4/date/date.component';
 import { FooterComponent } from './footer/footer.component';
+import { UserAccountComponent } from './user-account/user-account.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { FooterComponent } from './footer/footer.component';
     ReservedComponent,
     Section7Component,
     DateComponent,
-    FooterComponent
+    FooterComponent,
+    UserAccountComponent
   ],
   imports: [
     BrowserModule,

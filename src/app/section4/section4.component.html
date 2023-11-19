@@ -74,7 +74,8 @@
                    
                     <div class="date-fix d-flex">
                         <div class="calendar mt-5">
-                            <mat-form-field>
+
+                            <!-- <mat-form-field>
                                 <mat-label>Choose a date</mat-label>
                                 <input matInput [matDatepickerFilter]="myFilter" [matDatepicker]="picker" [min]="minDate" [max]="maxDate">
                                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
@@ -84,7 +85,34 @@
                                         <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
                                       </mat-datepicker-actions>
                                 </mat-datepicker>
-                            </mat-form-field>
+                            </mat-form-field> -->
+
+
+                            <div class="input-group mb-3" style="padding: 0px 14rem;">
+                                <input 
+                                style="background: #e0e0e0;
+                                border: none;
+                                padding: 10px;
+                                border-radius: 5px;
+                                width: 43rem;
+                                position: absolute;"
+                                 matInput [matDatepicker]="picker" placeholder="Choose a date" aria-label="Recipient's username" aria-describedby="button-addon2">
+                                <button 
+                                style="position: relative;
+                                left: 40rem;
+                                top: 3px;"
+                                class="btn btn-outline-secondary" type="button" id="button-addon2" (click)="picker.open()"> <i class="fa-light fa-calendar-circle-plus fa-lg ms-3"></i></button>
+                              </div>
+                              
+                              <mat-datepicker #picker>
+                                <mat-datepicker-actions>
+                                  <button mat-button matDatepickerCancel>Cancel</button>
+                                  <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
+                                </mat-datepicker-actions>
+                              </mat-datepicker>
+                              
+
+
                         </div>
                     </div>
 

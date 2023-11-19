@@ -57,8 +57,13 @@ export class ServiceService {
   }
 
   saveDateSelected(id: number): void {
-    this.dateSelected.push(id);
-    console.log(this.dateSelected);
+    const index = this.dateSelected.indexOf(id);
+    if (index !== -1) {
+      this.dateSelected.splice(index, 1);  // حذف تاریخ اگر انتخاب شده بود
+    }
+    
+    this.dateSelected = [id];  // تنها تاریخ جدید را انتخاب کنید
+
   }
 
   removeDateSelected(itemId: number): void {
@@ -68,9 +73,9 @@ export class ServiceService {
 
   reservedData = [
     {
-      name : this.user,
-      services : this.selected,
-      date : this.dateSelected,
+      name: this.user,
+      services: this.selected,
+      date: this.dateSelected,
     }
   ]
 
@@ -84,6 +89,6 @@ export class ServiceService {
     ];
     console.log(this.reservedData)
   }
-  
-  
+
+
 }

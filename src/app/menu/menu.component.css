@@ -50,6 +50,7 @@ ul li {
 
 .drop-nav-content {
     color: black;
+    text-shadow: 0 0 20px white;
     background: linear-gradient(45deg, #c5bdbd, transparent);
     border-radius: 7px;
     translate: -21px;
@@ -76,9 +77,9 @@ ul li {
 }
 
 .drop-nav-content a:hover {
-    background: #ffe082;
+    background: #ffc107;
 }
 
 .drop-nav-content a:active {
-    background: #ffca28;
+    background: #ffc107;
 }

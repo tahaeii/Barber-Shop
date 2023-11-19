@@ -57,14 +57,17 @@ export class DateComponent implements OnInit {
 
   selectedDate(date: any) {
     date.isSelected = !date.isSelected;
-    if (date.isSelected) {
-      this.srvc.saveDateSelected(date.id);
-    } else {
-      this.srvc.removeDateSelected(date.id);
-    }
-    this.diasableButton = this.srvc.dataSelectedCheck().length <= 0;
-    // For disable & anable button when user dont select servise
+    this.datee.forEach((d: any) => {
+      if (d.id !== date.id) {
+        d.isSelected = false;
+        this.srvc.removeDateSelected(d.id);
+      }
+    });
+    this.srvc.saveDateSelected(date.id);
+    this.diasableButton = this.srvc.dataSelectedCheck().length === 0 || !date.isSelected;
+  
   }
+  
 
   nexStepper() {
     this.srvc.fillReservedData();

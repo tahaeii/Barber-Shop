@@ -1,0 +1,13 @@
+#user-account .user-account-bac{
+    background: #f2dede;
+    box-shadow: inset 0 0 4px #a5a5a5;
+    /* filter: grayscale(0.5);*/
+    width: 100%;
+    height: 55.1rem;
+    margin: 0 auto;
+}
+
+.user-account-bac .empty{
+    padding: 16rem 0;
+    text-align: center;
+}
