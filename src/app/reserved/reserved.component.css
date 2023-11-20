@@ -1,0 +1,5 @@
+
+.disable-reserved{
+    text-decoration: line-through;
+    filter: grayscale(1);
+}

@@ -2,36 +2,52 @@
 <!-- That's Component For Showing The Reserved Times Of The User -->
 
 <section id="reserved">
-    <div class="reserved">
+
+    <div class="reserved mb-3">
         <div class="container">
-            <div class="card">
+            <div class="card mb-2" *ngFor="let reserve of reserved.slice(0, visibleServices)">
                 <h5 class="card-header">
-                    <i class="fa-light fa-hand-back-point-ribbon fa-xl" style="color: #dc3545;"></i> Today
+                    <i [class]="reserve.date === 'Today' ? 'fa-light fa-hand-back-point-ribbon fa-xl' : 'fa-duotone fa-check-double fa-xl'"
+                        style="color: #dc3545;"></i>
+                    {{reserve.date}}
                 </h5>
                 <div class="card-body d-flex justify-content-between">
-                    <div class="card-body-style align-self-center " style="line-height: 2.5;">
+                    <div class="card-body-style align-self-center" [ngClass]="{'disable-reserved': !reserve.isActive}"
+                        style="line-height: 2.5;">
                         <h4 class="card-title">
-                            <strong> Head <span style="color: #dc3545;">&</span> Face Correction - </strong>
-                            <span style="font-size: 20px;"><span style="color: #5d8d41;">$</span>43 </span>
+                            <strong>
+                                {{reserve.servicesOne}}
+                                <span *ngIf="reserve.servicesTwo">
+                                    <span style="color: #dc3545;">& </span>{{reserve.servicesTwo}}
+                                </span>
+                                -
+                            </strong>
+                            <span style="font-size: 20px;">
+                                <span style="color: #5d8d41;">$</span>
+                                {{reserve.price}}
+                            </span>
                         </h4>
-                        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-
+                        <p class="card-text">
+                            {{reserve.describe}}
+                        </p>
                     </div>
-
                     <div class="d-flex">
                         <p class="card-text text-muted text-center" style="margin: 15px;">
-                            12.00 pm
+                            {{reserve.fTime}}
                             <br>
                             -
                             <br>
-                            13.30 pm
+                            {{reserve.tTime}}
                         </p>
-                        <button class="btn btn-danger"><i class="bi bi-trash3"></i></button>
+                        <button class="btn" [class.btn-primary]="reserve.isActive"
+                            [class.btn-danger]="!reserve.isActive">
+                            <i class="{{reserve.isActive ? 'fa-duotone fa-map-pin fa-lg' : 'bi bi-trash3'}}"></i>
+                        </button>
                     </div>
-
                 </div>
-
             </div>
+            <button class="btn btn-light me-2"
+                (click)="loadMore()" *ngIf="visibleServices < reserved.length">LoadMore</button>
         </div>
     </div>
 </section>
