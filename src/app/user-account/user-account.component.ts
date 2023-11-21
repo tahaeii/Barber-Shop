@@ -7,4 +7,15 @@ import { Component } from '@angular/core';
 })
 export class UserAccountComponent {
 
+  showPrfl = false;
+  showRsrvd = false;
+
+  profile(){
+    this.showPrfl = true;
+    this.showRsrvd = false;
+  }
+  reserved(){
+    this.showRsrvd = true;
+    this.showPrfl = false;
+  }
 }

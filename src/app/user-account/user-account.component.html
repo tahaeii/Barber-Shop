@@ -1,31 +1,91 @@
-<div id="user-account">
-    <div class="container">
-        <div class="user-account-bac">
+<div class="container-fluid">
+    <div class="row flex-nowrap">
 
-            <div *ngIf="false">
-                <div class="empty">
-                    <p style="font-size: 3rem;">Dashboard is an Empty !</p>
-                    <p style="font-size: 3.5rem;">Book an
-                        <span style="font-size: 4rem;">App<span style="color: #dc3545;">o</span>intment</span> Now!!
-                    </p>
-                    <p>Need Help? <span class="link-danger" style="cursor: pointer;">Click Me</span></p>
+        <div class="col-auto col-md-3 col-xl-2 px-sm-2 px-0" style="background: #323232;box-shadow: 0 0 15px black;">
+            <div class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-4 min-vh-100 position-fixed">
+
+                <a href="/" class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                    <span class="fs-5 d-none d-sm-inline">Menu</span>
+                </a>
+
+                <ul class="nav flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start" id="menu">
+                    <li class="nav-item">
+                        <a (click)="profile()" class="nav-link text-white p-3 align-middle"
+                        style="cursor: pointer;">
+                            <i class="fa-thin fa-user-vneck fa-xl me-2"></i>
+                            <span class="ms-1 d-none d-sm-inline">Profile</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a (click)="reserved()" class="nav-link text-white p-3 align-middle"
+                        style="cursor: pointer;">
+                            <i class="fa-thin fa-calendar-lines-pen fa-xl me-2"></i>
+                            <span class="ms-1 d-none d-sm-inline">Reserved</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link text-white p-3 align-middle">
+                            <i class="fa-thin fa-cart-shopping-fast fa-xl me-2"></i>
+                            <span class="ms-1 d-none d-sm-inline">Shop</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" class="nav-link text-white p-3 align-middle">
+                            <i class="fa-thin fa-headset fa-xl me-2"></i>
+                            <span class="ms-1 d-none d-sm-inline">Support</span>
+                        </a>
+                    </li>
+                </ul>
+
+                <hr>
+                <div>
+                    <a href="#" class="d-flex align-items-center text-white text-decoration-none mb-3">
+                        <button class="btn btn-light">
+                            <i class="fa-thin fa-house-blank fa-lg"></i>
+                            Back Home
+                        </button>
+
+                    </a>
+
+                    <a href="#" class="d-flex align-items-center text-white text-decoration-none mb-3">
+                        <button class="btn btn-secondary">
+                            <i class="fa-thin fa-right-from-bracket fa-lg"></i>
+                            Log Out
+                        </button>
+
+                    </a>
+                    
+                    <p class="text-white" style="font-size: 0.5rem">&#169; tata Barber</p>
+
                 </div>
             </div>
-
-
-            <div class="full">
+        </div>
+        <div class="col py-3"> <!--Sidenav Content-->
+            <div id="user-account">
                 <div class="container">
-                    <div class="full-txt">
-                        <p>Your Reserved :</p>
+                    <div class="user-account-bac">
+
+                        <div *ngIf="false">
+                            <div class="empty">
+                                <p style="font-size: 3rem;">Dashboard is an Empty !</p>
+                                <p style="font-size: 3.5rem;">Book an
+                                    <span style="font-size: 4rem;">App<span
+                                            style="color: #dc3545;">o</span>intment</span> Now!!
+                                </p>
+                                <p>Need Help? <span class="link-danger" style="cursor: pointer;">Click Me</span></p>
+                            </div>
+                        </div>
+
+
+                        
+                        <app-reserved *ngIf="showRsrvd"></app-reserved>
+                        <app-profile *ngIf="showPrfl"></app-profile>
+
                     </div>
-                    <app-reserved></app-reserved>
                 </div>
             </div>
-
-            
-
-
-
         </div>
     </div>
 </div>
+
+<router-outlet></router-outlet>

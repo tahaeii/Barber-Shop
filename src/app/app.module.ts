@@ -18,11 +18,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
 import { MaterialPersianDateAdapter, PERSIAN_DATE_FORMATS } from './persian-dateadapter';
 import { Section6Component } from './section6/section6.component';
-import { ReservedComponent } from './reserved/reserved.component';
+import { ReservedComponent } from './user-account/reserved/reserved.component';
 import { Section7Component } from './section7/section7.component';
 import { DateComponent } from './section4/date/date.component';
 import { FooterComponent } from './footer/footer.component';
 import { UserAccountComponent } from './user-account/user-account.component';
+import { ProfileComponent } from './user-account/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { UserAccountComponent } from './user-account/user-account.component';
     Section7Component,
     DateComponent,
     FooterComponent,
-    UserAccountComponent
+    UserAccountComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,13 @@
+
+.disable-reserved{
+    text-decoration: line-through;
+    filter: grayscale(1);
+}
+
+
+.full-txt {
+    font-size: 2rem;
+    border-bottom: 1px dashed;
+    width: fit-content;
+    margin: 1rem 1rem 3rem;
+}

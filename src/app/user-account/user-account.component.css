@@ -4,21 +4,11 @@
     /* filter: grayscale(0.5);*/
     width: 100%;
     height: fit-content;
+    min-height: 53.1rem;
     margin: 0 auto;
 }
 
 .user-account-bac .empty {
     padding: 16rem 0;
     text-align: center;
-}
-
-.full {
-    padding: 6rem 0rem;
-}
-
-.full-txt {
-    font-size: 2rem;
-    border-bottom: 1px dashed;
-    width: fit-content;
-    margin: 1rem 1rem 3rem;
 }
