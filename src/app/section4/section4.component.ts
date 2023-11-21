@@ -3,6 +3,8 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { MatStepper } from '@angular/material/stepper';
 import { ServiceService } from '../service.service';
 import * as moment from 'moment';
+import { PopUpComponent } from './pop-up/pop-up.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-section4',
@@ -33,7 +35,7 @@ export class Section4Component implements OnInit {
   minDate !: Date;
   maxDate !: Date;
 
-  constructor(private _formBuilder: FormBuilder, public srvc: ServiceService) {
+  constructor(private _formBuilder: FormBuilder, public srvc: ServiceService,public dialog: MatDialog) {
 
     this.minDate = new Date();
 
@@ -42,6 +44,14 @@ export class Section4Component implements OnInit {
 
     // Access To Celander Dates
   }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(PopUpComponent,{
+      width: '340px',disableClose: true 
+    });
+  }
+
+
 
   myFilter = (d: Date | null): boolean => {
     // const jalaliDate = moment(d).format('jYYYY/jM/jD');
@@ -181,4 +191,13 @@ export class Section4Component implements OnInit {
     this.srvc.setSelected([]);
     this.visibleServices = 6;
   }
+
+  nameShow !: string;
+  emailShow !: string;
+  password !: number;
+
+  name(value: string) {
+    this.nameShow = value;
+  }
+
 }

@@ -70,8 +70,9 @@
 
             <mat-step [stepControl]="thirdFormGroup">
                 <ng-template matStepLabel>Select Date</ng-template>
+
                 <div class="steppr-condition">
-                   
+
                     <div class="date-fix d-flex">
                         <div class="calendar mt-5">
 
@@ -89,28 +90,27 @@
 
 
                             <div class="input-group mb-3" style="padding: 0px 14rem;">
-                                <input 
-                                style="background: #e0e0e0;
+                                <input style="background: #e0e0e0;
                                 border: none;
                                 padding: 10px;
                                 border-radius: 5px;
                                 width: 43rem;
-                                position: absolute;"
-                                 matInput [matDatepicker]="picker" placeholder="Choose a date" aria-label="Recipient's username" aria-describedby="button-addon2">
-                                <button 
-                                style="position: relative;
+                                position: absolute;" matInput [matDatepicker]="picker" placeholder="Choose a date"
+                                    aria-label="Recipient's username" aria-describedby="button-addon2">
+                                <button style="position: relative;
                                 left: 40rem;
-                                top: 3px;"
-                                class="btn btn-outline-secondary" type="button" id="button-addon2" (click)="picker.open()"> <i class="fa-light fa-calendar-circle-plus fa-lg ms-3"></i></button>
-                              </div>
-                              
-                              <mat-datepicker #picker>
+                                top: 3px;" class="btn btn-outline-secondary" type="button" id="button-addon2"
+                                    (click)="picker.open()"> <i
+                                        class="fa-light fa-calendar-circle-plus fa-lg ms-3"></i></button>
+                            </div>
+
+                            <mat-datepicker #picker>
                                 <mat-datepicker-actions>
-                                  <button mat-button matDatepickerCancel>Cancel</button>
-                                  <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
+                                    <button mat-button matDatepickerCancel>Cancel</button>
+                                    <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
                                 </mat-datepicker-actions>
-                              </mat-datepicker>
-                              
+                            </mat-datepicker>
+
 
 
                         </div>
@@ -133,27 +133,86 @@
                 <div>
                     <button mat-button matStepperPrevious (click)="resetService()">Back</button>
                 </div>
+
+
             </mat-step>
 
             <mat-step [stepControl]="fourthFormGroup">
-                <form class="stepper-form" [formGroup]="fourthFormGroup">
+                <ng-template matStepLabel>Information</ng-template>
 
-                    <ng-template matStepLabel>Your Name</ng-template>
-                    <mat-form-field>
-                        <mat-label>Fisrt Name</mat-label>
-                        <input matInput placeholder="Your Name" formControlName="firstCtrl" required>
-                    </mat-form-field>
-                    <mat-form-field class="ms-5">
-                        <mat-label>Last Name</mat-label>
-                        <input matInput placeholder="Your Last Name" formControlName="firstCtrl" required>
-                    </mat-form-field>
+                <div id="information" class="d-flex justify-content-around align-items-center">
 
-                    <div>
-                        <p>Please Enter Your Name & Last Name!</p>
-                        <button mat-button matStepperNext>Next</button>
-                        <button mat-button matStepperPrevious>Back</button>
+
+                    <form class="stepper-form example-form">
+                        <table class="example-full-width" cellspacing="0">
+                            <tr>
+                                <td><mat-form-field class="example-full-width">
+                                        <mat-label>name</mat-label>
+                                        <input matInput placeholder="Name" (input)="name($event.target.value)">
+                                    </mat-form-field></td>
+                                <td><mat-form-field class="example-full-width ms-4">
+                                        <mat-label>Email</mat-label>
+                                        <input matInput placeholder="Email">
+                                    </mat-form-field></td>
+                            </tr>
+                        </table>
+
+                        <mat-form-field style="width: 28.3rem;">
+                            <mat-label>Password</mat-label>
+                            <input matInput placeholder="Passowrd">
+                        </mat-form-field>
+
+                        <div class="login-ques text-muted text-center" style="font-size: x-small;">
+                            <p>Already Have An Account? Click
+                                <span class="text-danger" (click)="openDialog()" style="cursor: pointer;">here</span>
+                            </p>
+                        </div>
+
+
+                        <div class="mt-4 mb-5">
+                            <button mat-button matStepperPrevious>Back</button>
+                            <button mat-button matStepperNext>Next</button>
+                        </div>
+                    </form>
+
+                    <div class="stepper-info">
+                        <div class="info-name text-center fs-4">
+                            <p>Dear
+                                <span *ngIf="!nameShow">...</span>
+                                {{ nameShow}}
+                            </p>
+                        </div>
+                        <div class="info-services">
+                            <span>Services </span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="160" height="6" viewBox="0 0 139 6"
+                                fill="none">
+                                <path d="M0.113249 3L3 5.88675L5.88675 3L3 0.113249L0.113249 3ZM3 3.5H139V2.5H3V3.5Z"
+                                    fill="#525252" />
+                            </svg>
+                            <span class="span-info">Haire Cut</span>
+                        </div>
+                        <div class="info-date">
+                            <span>Date </span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="160" height="6" viewBox="0 0 139 6"
+                                fill="none">
+                                <path d="M0.113249 3L3 5.88675L5.88675 3L3 0.113249L0.113249 3ZM3 3.5H139V2.5H3V3.5Z"
+                                    fill="#525252" />
+                            </svg>
+                            <span class="span-info">Jun 27</span>
+                        </div>
+                        <div class="info-time">
+                            <span>Time </span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="160" height="6" viewBox="0 0 139 6"
+                                fill="none">
+                                <path d="M0.113249 3L3 5.88675L5.88675 3L3 0.113249L0.113249 3ZM3 3.5H139V2.5H3V3.5Z"
+                                    fill="#525252" />
+                            </svg>
+                            <span class="span-info">13.30</span>
+                        </div>
                     </div>
-                </form>
+
+
+                </div>
             </mat-step>
 
             <mat-step>

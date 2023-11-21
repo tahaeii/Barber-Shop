@@ -1,0 +1,44 @@
+<div style="
+padding: 2rem;
+text-align: center;
+">
+    <div class="add-title fs-4">
+        <p>Login
+            <i class="fa-duotone fa-arrow-right-to-bracket"
+                style="--fa-primary-color: #d93a42; --fa-secondary-color: #d93a42;"></i>
+        </p>
+
+    </div>
+    <div>
+        <form [formGroup]="addCusForm">
+            <mat-grid-list cols="0" rowHeight="85px" (window:resize)="onResize($event)">
+                <mat-grid-tile>
+                    <div class="text-inside">
+                        <mat-form-field>
+                            <mat-label>Email</mat-label>
+                            <input matInput placeholder="Email" formControlName="email">
+                        </mat-form-field>
+                    </div>
+                </mat-grid-tile>
+
+
+                <mat-grid-tile>
+                    <div class="text-inside">
+                        <mat-form-field>
+                            <mat-label>Password</mat-label>
+                            <input matInput placeholder="Password" formControlName="Passowrd">
+                        </mat-form-field>
+                    </div>
+                </mat-grid-tile>
+
+
+            </mat-grid-list>
+
+            <div class="btn-sec mt-3">
+                <button mat-raised-button type="button" class="Discard-btn me-3">Cancel</button>
+                <button mat-raised-button type="submit" color="primary" class="Update-btn">Save</button>
+            </div>
+
+        </form>
+    </div>
+</div>

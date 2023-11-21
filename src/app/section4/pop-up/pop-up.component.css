@@ -1,0 +1,25 @@
+mat-form-field {
+    width: 90%;
+}
+
+.btn-sec {
+    margin-left: 6em;
+}
+
+.text-inside {
+    position: absolute;
+    left: 5px;
+    width: 100%;
+}
+
+@media (max-width: 800px) {
+    .btn-sec {
+        margin-right: 1rem !important;
+    }
+}
+
+@media (max-width: 600px) {
+    .btn-sec {
+        margin-right: 1rem !important;
+    }
+}

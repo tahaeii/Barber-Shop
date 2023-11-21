@@ -24,6 +24,7 @@ import { DateComponent } from './section4/date/date.component';
 import { FooterComponent } from './footer/footer.component';
 import { UserAccountComponent } from './user-account/user-account.component';
 import { ProfileComponent } from './user-account/profile/profile.component';
+import { PopUpComponent } from './section4/pop-up/pop-up.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { ProfileComponent } from './user-account/profile/profile.component';
     DateComponent,
     FooterComponent,
     UserAccountComponent,
-    ProfileComponent
+    ProfileComponent,
+    PopUpComponent
   ],
   imports: [
     BrowserModule,
