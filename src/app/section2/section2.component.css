@@ -1,3 +1,7 @@
+#sSection .ssection {
+    height: 60vh;
+}
+
 #sSection .ssection .about {
     width: 90%;
     height: inherit;

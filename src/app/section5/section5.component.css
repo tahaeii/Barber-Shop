@@ -1,12 +1,23 @@
 .card-body-style {
-    border-top: 0.004px solid;
-    border-top: ridge;
+    /* border-top: 0.004px solid; */
+    /* border-top: ridge; */
     width: 82%;
     align-self: center;
     box-sizing: content-box;
     padding: 1rem 0;
 }
 
+.card-head {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    border-color: #7c7c7c;
+    width: 81%;
+    margin: 0 auto;
+}
+.card-head p{
+    margin-bottom: 7px;
+}
 .card-body-style h6 {
     text-align: center;
     font-family: none;
