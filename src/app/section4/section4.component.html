@@ -118,14 +118,14 @@
 
                     <app-date [ngClass]="{'load-date-user': srvc.isUser}"></app-date>
 
-                    <div *ngIf="srvc.isUser">
+                    <!-- <div *ngIf="srvc.isUser">
                         <div class="steppr-condition-contain">
                             <p>Wait !!!</p>
                             <p class="text-muted">It's better to login first !</p>
                             <button class="btn btn-info" style="padding: 7px 50px;">Log in</button><br>
                             <a [routerLink]="'/user'">You don't have an account?</a>
                         </div>
-                    </div>
+                    </div> -->
 
                 </div>
 
@@ -137,7 +137,7 @@
 
             </mat-step>
 
-            <mat-step [stepControl]="fourthFormGroup">
+            <!-- <mat-step [stepControl]="fourthFormGroup">
                 <ng-template matStepLabel>Information</ng-template>
 
                 <div id="information" class="d-flex justify-content-around align-items-center">
@@ -213,7 +213,7 @@
 
 
                 </div>
-            </mat-step>
+            </mat-step> -->
 
             <mat-step>
                 <ng-template matStepLabel>Done</ng-template>

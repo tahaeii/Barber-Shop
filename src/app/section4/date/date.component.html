@@ -6,13 +6,13 @@
 
         <div class="appointment-time d-flex flex-wrap ms-5">
 
-            <div class="time" *ngFor="let date of datee" [ngClass]="{'selected-service': date.isSelected}"
+            <div class="time m-auto" *ngFor="let date of datee" [ngClass]="{'selected-service': date.isSelected}"
                 (click)="selectedDate(date)">
 
                 <div class="time-title">
-                    <p>{{ date.title }}</p>
+                    <p class="d-none" >{{ date.title }}</p>
                 </div>
-                <div class="time-time">
+                <div class="time-time" style="    font-size: 1.1rem;">
                     <p>{{ date.time }}</p>
                 </div>
                 <div class="time-avable text-muted">

@@ -1,12 +1,17 @@
 import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { BehaviorSubject, Observable, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ServiceService {
 
-  constructor() { }
+  private scrollPositionSubject = new BehaviorSubject<number>(0);
+  public scrollPosition$: Observable<number> = this.scrollPositionSubject.asObservable();
+
+  constructor() {
+    window.addEventListener('scroll', () => this.scrollPositionSubject.next(window.scrollY)); // Fixed Menu After Scroll
+  }
 
   private selected: number[] = []; // save the service-body's id
 
@@ -61,7 +66,7 @@ export class ServiceService {
     if (index !== -1) {
       this.dateSelected.splice(index, 1);  // حذف تاریخ اگر انتخاب شده بود
     }
-    
+
     this.dateSelected = [id];  // تنها تاریخ جدید را انتخاب کنید
 
   }

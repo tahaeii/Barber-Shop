@@ -1,19 +1,19 @@
-let timVine = document.getElementById("fSection");
-let navbar = document.getElementById("mainmenu");
-let navPos = navbar.getBoundingClientRect().top;
+// let timVine = document.getElementById("fSection");
+// let navbar = document.getElementById("mainmenu");
+// let navPos = navbar.getBoundingClientRect().top;
 
-window.addEventListener("scroll", e => {
+// window.addEventListener("scroll", e => {
 
-    let scrollPos = window.scrollY;
-    if (scrollPos > navPos) {
-        navbar.classList.add('sticky');
-        header.classList.add('navbarOffsetMargin');
-    } else {
-        navbar.classList.remove('sticky');
-        header.classList.remove('navbarOffsetMargin');
-    }
+//     let scrollPos = window.scrollY;
+//     if (scrollPos > navPos) {
+//         navbar.classList.add('sticky');
+//         header.classList.add('navbarOffsetMargin');
+//     } else {
+//         navbar.classList.remove('sticky');
+//         header.classList.remove('navbarOffsetMargin');
+//     }
 
-});
+// });
 
 const festivalDate = new Date("2024-01-19T00:00:00Z").getTime();
 const interval = setInterval(function () {

@@ -46,13 +46,13 @@ export class DateComponent implements OnInit {
       avable: 1,
       isSelected: false
     },
-    {
-      id: 4,
-      title: 'Hair Cut',
-      time: '16.00 pm - 17.20 pm',
-      avable: 2,
-      isSelected: false
-    },
+    // {
+    //   id: 4,
+    //   title: 'Hair Cut',
+    //   time: '16.00 pm - 17.20 pm',
+    //   avable: 2,
+    //   isSelected: false
+    // },
   ]
 
   selectedDate(date: any) {
