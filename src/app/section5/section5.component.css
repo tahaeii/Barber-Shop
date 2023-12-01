@@ -1,10 +1,12 @@
 .card-body-style {
     /* border-top: 0.004px solid; */
     /* border-top: ridge; */
-    width: 82%;
+    /* width: 82%; */
+    width: 100%;
     align-self: center;
-    box-sizing: content-box;
-    padding: 1rem 0;
+    /* box-sizing: content-box; */
+    box-sizing: border-box;
+    /* padding: 1rem 0; */
 }
 
 .card-head {

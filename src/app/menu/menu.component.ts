@@ -24,6 +24,9 @@ export class MenuComponent implements OnInit {
 
   ngOnInit() {
     this.username.scrollPosition$.subscribe(scrollPos => this.navbarSticky = scrollPos > 0);
+    const script = this.render.createElement('script');
+    script.src = 'assets/menuscript.js';
+    this.render.appendChild(this.elmn.nativeElement, script);
   }
 
   @HostListener('window:scroll', ['$event'])
