@@ -41,6 +41,7 @@ body {
 h2 {
     line-height: 1;
     font-size: xxx-large;
+    font-family: 'Merienda';
     height: 51px;
     display: inline-block;
     background-image: linear-gradient(transparent 50%, #ef6c0008 50%, #d32f2f61 85%, transparent 85%, transparent 100%);

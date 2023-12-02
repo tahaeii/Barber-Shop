@@ -178,24 +178,23 @@
     }
 }
 
-.customer-section .single-cat .cat-cap .rating {
+/* .rating {
     position: relative
 }
 
-.customer-section .single-cat .cat-cap .rating li {
-    color: #FB0000;
-    font-size: 14px;
+.rating i {
+    color: #ffc107;
     display: inline-block;
     margin-bottom: 15px
 }
 
-.customer-section .single-cat .cat-cap .rating li p {
+.cat-cap p {
     color: #150303
-}
+} */
 
 .section-padding {
-    padding-top: 120px;
-    padding-bottom: 120px
+    padding-top: 50px;
+    padding-bottom: 50px
 }
 
 @media only screen and (min-width: 768px) and (max-width: 991px) {
@@ -275,13 +274,53 @@
     }
 }
 
-.section-tittle h2 {
-    font-family: "Chivo", sans-serif;
-    font-size: 44px;
-    text-transform: uppercase;
-    display: block;
-    font-weight: 700;
-    line-height: 1.3;
-    margin-bottom: 12px;
-    position: relative
+.member {
+    height: 70px;
+    width: 70px;
+    border-bottom-style: inset;
+    box-shadow: 0 0 2px #494949;
+    border-radius: 50%;
+}
+
+.member1 {
+    background-image: url(../../assets/users/hajian1.jpg);
+    object-fit: cover;
+    background-size: cover;
+    position: absolute;
+    z-index: 1;
+}
+
+.member2 {
+    background-image: url(../../assets/users/cat2.jpg);
+    object-fit: cover;
+    background-size: cover;
+    position: absolute;
+    left: 2rem;
+}
+
+.member3 {
+    background-image: url(../../assets/users/cat.jpg);
+    object-fit: cover;
+    background-size: cover;
+    position: absolute;
+    left: 4rem;
+    z-index: -1;
+}
+
+.member4 {
+    background-image: url(../../assets/users/girl1.jpg);
+    object-fit: cover;
+    background-size: cover;
+    position: absolute;
+    left: 6rem;
+    z-index: -2;
+}
+.member5 {
+    background-color: #ff5b0080;
+    position: absolute;
+    left: 9rem;
+    z-index: -3;
+    text-shadow: 0 0 1px white;
+    font-size: 27px;
+    padding: 14px 21px;
 }
