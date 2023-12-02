@@ -1,0 +1,39 @@
+<div id="services">
+    <div class="services-txt text-center">
+        <div class="services-txt-content">
+            <p class="text-muted">You Can Choose Several Services!</p>
+        </div>
+    </div>
+
+    <div class="services">
+        <div class="service-body service-body-bac" *ngFor="let service of services.slice(0, visibleServices)"
+            [ngClass]="{'selected-service': service.isSelected , 'load-date': loadDate}"
+            (click)="!loadDate ? selectedService(service) : null">
+
+            <div class="service-price">
+                <p>&#36;{{ service.price }}</p>
+            </div>
+            <div class="service-text">
+                <div class="service-title">
+                    <p>{{ service.title }}</p>
+                </div>
+                <div class="service-content">
+                    <p class="text-muted">{{ service.description }}</p>
+                </div>
+            </div>
+            <div class="service-picture">
+                <div [ngClass]="service.pictureClass"></div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="float-end" style="margin-right: 4rem;">
+        <button class="btn btn-light me-2" [ngClass]="{'load-date': loadDate}" (click)=" !loadDate ? loadMore() : null"
+            *ngIf="visibleServices < services.length">Load
+            More</button>
+        <button class="btn btn-danger" (click)="showSelectedTitles()" [disabled]="diasableButton">Finish?</button>
+    </div>
+    <div *ngIf="loaderAnimation" class="spinner-overlay" style="position: absolute;right: 37rem;top: 11rem;">
+        <mat-spinner [diameter]="80"></mat-spinner>
+    </div>
+</div>

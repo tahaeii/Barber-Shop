@@ -20,12 +20,13 @@ import { MaterialPersianDateAdapter, PERSIAN_DATE_FORMATS } from './persian-date
 import { Section6Component } from './section6/section6.component';
 import { ReservedComponent } from './user-account/reserved/reserved.component';
 import { Section7Component } from './section7/section7.component';
-import { DateComponent } from './section4/date/date.component';
+import { DateComponent } from './section4/third-stepper/date.component';
 import { FooterComponent } from './footer/footer.component';
 import { UserAccountComponent } from './user-account/user-account.component';
 import { ProfileComponent } from './user-account/profile/profile.component';
 import { PopUpComponent } from './section4/pop-up/pop-up.component';
 import { ScrollToTopComponent } from './scroll-to-top/scroll-to-top.component';
+import { SecondStepperComponent } from './section4/second-stepper/second-stepper.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { ScrollToTopComponent } from './scroll-to-top/scroll-to-top.component';
     UserAccountComponent,
     ProfileComponent,
     PopUpComponent,
-    ScrollToTopComponent
+    ScrollToTopComponent,
+    SecondStepperComponent
   ],
   imports: [
     BrowserModule,
