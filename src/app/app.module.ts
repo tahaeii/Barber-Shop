@@ -25,6 +25,7 @@ import { FooterComponent } from './footer/footer.component';
 import { UserAccountComponent } from './user-account/user-account.component';
 import { ProfileComponent } from './user-account/profile/profile.component';
 import { PopUpComponent } from './section4/pop-up/pop-up.component';
+import { ScrollToTopComponent } from './scroll-to-top/scroll-to-top.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { PopUpComponent } from './section4/pop-up/pop-up.component';
     FooterComponent,
     UserAccountComponent,
     ProfileComponent,
-    PopUpComponent
+    PopUpComponent,
+    ScrollToTopComponent
   ],
   imports: [
     BrowserModule,
