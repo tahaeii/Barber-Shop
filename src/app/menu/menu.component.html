@@ -1,11 +1,13 @@
 <!-- Menu Component -->
 <!-- That's Component For Show Navbar -->
+
 <header>
     <div class="header">
         <div id="submenu" class="d-flex my-3">
             <div id="timer"></div>
         </div>
-        <div id="mainmenu" [ngClass]="{'sticky': navbarSticky}" class="mainmenu d-flex align-items-center justify-content-around fixed-top">
+        <div id="mainmenu" [ngClass]="{'sticky': navbarSticky}"
+            class="mainmenu d-flex align-items-center justify-content-around fixed-top">
             <nav id="navbar-example2" class="navbar navbar-expand-lg bg-body-tertiary">
                 <div class="container-fluid">
                     <a class="navbar-brand position-fixed" href="#" style="left: 12px;">
@@ -37,12 +39,12 @@
                             </button>
 
                             <div class="ms-2">
-                                <div *ngIf="!username.isUser">
+                                <div *ngIf="!srvc.isUser">
                                     <button [routerLink]="'/login'" class="btn btn-danger rounded-5">
                                         <i class="bi bi-box-arrow-in-right"></i>
                                     </button>
                                 </div>
-                                <div class="headeer" *ngIf="username.isUser">
+                                <div class="headeer" *ngIf="srvc.isUser">
                                     <div class="drop-nav">
                                         <button class="rounded-5 p-1 border-0">
                                             <i class="fa-duotone fa-user fa-2xl"
@@ -54,13 +56,10 @@
                                             <a>Logout</a>
                                         </div>
                                     </div>
-                                    <span class="user-style" [textContent]="username.user"></span>
+                                    <span class="user-style" [textContent]="srvc.user"></span>
                                     <!-- <span class="user-style">tata aref</span> -->
                                 </div>
                             </div>
-
-
-
                         </div>
                     </div>
                 </div>

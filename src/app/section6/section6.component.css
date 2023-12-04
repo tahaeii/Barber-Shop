@@ -1,3 +1,61 @@
+.member {
+    height: 70px;
+    width: 70px;
+    border-bottom-style: inset;
+    box-shadow: 0 0 2px #494949;
+    border-radius: 50%;
+}
+
+.member1 {
+    background-image: url(../../assets/img/users/hajian1.jpg);
+    object-fit: cover;
+    background-size: cover;
+    position: absolute;
+    z-index: 1;
+}
+
+.member2 {
+    background-image: url(../../assets/img/users/cat2.jpg);
+    object-fit: cover;
+    background-size: cover;
+    position: absolute;
+    left: 2rem;
+}
+
+.member3 {
+    background-image: url(../../assets/img/users/cat.jpg);
+    object-fit: cover;
+    background-size: cover;
+    position: absolute;
+    left: 4rem;
+    z-index: -1;
+}
+
+.member4 {
+    background-image: url(../../assets/img/users/girl1.jpg);
+    object-fit: cover;
+    background-size: cover;
+    position: absolute;
+    left: 6rem;
+    z-index: -2;
+}
+
+.member5 {
+    background-color: #ff5b0080;
+    position: absolute;
+    left: 9rem;
+    z-index: -3;
+    text-shadow: 0 0 1px white;
+    font-size: 27px;
+    padding: 14px 21px;
+}
+
+.customer button {
+    position: relative;
+    top: 11px;
+    left: 16rem;
+}
+
 .customer-section .col-lg-4:nth-child(1) .single-cat,
 .customer-section .col-lg-4:nth-child(2) .single-cat,
 .customer-section .col-lg-4:nth-child(3) .single-cat {
@@ -178,20 +236,6 @@
     }
 }
 
-/* .rating {
-    position: relative
-}
-
-.rating i {
-    color: #ffc107;
-    display: inline-block;
-    margin-bottom: 15px
-}
-
-.cat-cap p {
-    color: #150303
-} */
-
 .section-padding {
     padding-top: 50px;
     padding-bottom: 50px
@@ -272,55 +316,4 @@
         font-size: 14px;
         padding-left: 0px
     }
-}
-
-.member {
-    height: 70px;
-    width: 70px;
-    border-bottom-style: inset;
-    box-shadow: 0 0 2px #494949;
-    border-radius: 50%;
-}
-
-.member1 {
-    background-image: url(../../assets/users/hajian1.jpg);
-    object-fit: cover;
-    background-size: cover;
-    position: absolute;
-    z-index: 1;
-}
-
-.member2 {
-    background-image: url(../../assets/users/cat2.jpg);
-    object-fit: cover;
-    background-size: cover;
-    position: absolute;
-    left: 2rem;
-}
-
-.member3 {
-    background-image: url(../../assets/users/cat.jpg);
-    object-fit: cover;
-    background-size: cover;
-    position: absolute;
-    left: 4rem;
-    z-index: -1;
-}
-
-.member4 {
-    background-image: url(../../assets/users/girl1.jpg);
-    object-fit: cover;
-    background-size: cover;
-    position: absolute;
-    left: 6rem;
-    z-index: -2;
-}
-.member5 {
-    background-color: #ff5b0080;
-    position: absolute;
-    left: 9rem;
-    z-index: -3;
-    text-shadow: 0 0 1px white;
-    font-size: 27px;
-    padding: 14px 21px;
 }

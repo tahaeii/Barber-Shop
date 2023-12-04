@@ -1,5 +1,5 @@
 <!-- Section-5 Component -->
-<!-- That's Component For Show Swipers -->
+<!-- That's Component For Show Slider -->
 
 <section id="fiSection">
     <div class="fisection">
@@ -7,19 +7,12 @@
         <div class="slide-container">
             <div id="right-slide1"></div>
             <div class="section-slider container" id="slider1">
-
                 <div *ngFor="let p of products" class="thumbnail1 card">
                     <img [src]="p.image.url" class="card-img-top" [alt]="p.alt">
                     <div class="card-body card-body-style">
                         <div class="d-flex justify-content-between">
-                            <p class="small" style="
-                                      padding: 0 8px;
-                                      background: #dc3545;
-                                      filter: drop-shadow(0px 0px 3px #d1d1d1);
-                                      border-radius: 0px 3px 3px 0px;
-                                      text-align: right;
-                                      translate: -1rem;">
-                                <a href="#!" class="text-white text-decoration-none">
+                            <p class="small card-body-p">
+                                <a href="#" class="text-white text-decoration-none">
                                     {{p.categories}}
                                 </a>
                             </p>
@@ -27,76 +20,63 @@
                                 <s>&#36;{{p.lPrice}}</s>
                             </p>
                         </div>
-
                         <div class="d-flex justify-content-between mb-3">
                             <h5 class="mb-0" style="text-shadow: 0 0 0.5px black;">
                                 {{p.product}}
                             </h5>
                             <h5 class="text-dark mb-0">
-                                <span style="color: green">$</span>{{p.nPrice}}
+                                <span style="color: green">$</span>
+                                {{p.nPrice}}
                             </h5>
                         </div>
-
                         <div class="d-flex justify-content-between mb-2">
-                            <p class="text-muted mb-0" style="font-size: 13px;align-self: center;">
+                            <p class="ava-style text-muted mb-0 align-self-center">
                                 Available: <span class="fw-bold">
                                     {{p.available}}
                                 </span></p>
                             <div class="ms-auto text-warning">
-
                                 <span *ngFor="let star of [1, 2, 3, 4, 5]; let i = index">
                                     <i class="fa fa-star fa-sm" *ngIf="p.stars >= i + 1"></i>
                                     <i class="fa fa-star-half-alt fa-sm" *ngIf="p.stars + 0.5 === i + 1"></i>
                                     <i class="far fa-star fa-sm" *ngIf="p.stars + 0.5 < i + 1"></i>
-                                </span> <!--The Best Code in My life-->
-
-
-
-
+                                </span> <!--The Best Code in My life !-->
                             </div>
+
                         </div>
                     </div>
                 </div>
-
             </div>
             <div id="left-slide1"></div>
         </div>
 
-        <!-- First Swiper End -->
+        <!-- Slider End -->
 
-
-        <!-- Gallery -->
         <div class="row" style="padding: 0 4rem;">
             <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
-                <img src="assets/product/barber-true-north-barber-shop.jpg"
-                    class="w-100 shadow-1-strong rounded mb-4 img-fluid" alt="Boat on Calm Water" />
+                <img src="assets/img/product/gallery/gallery-one.jpg"
+                    class="w-100 shadow-1-strong rounded mb-4 img-fluid" alt="">
 
-                <img src="assets/product/AdobeStock_214183772_full_width.jpeg"
-                    class="w-100 shadow-1-strong rounded mb-4 img-fluid" alt="Wintry Mountain Landscape" />
+                <img src="assets/img/product/gallery/gallery-two.jpeg"
+                    class="w-100 shadow-1-strong rounded mb-4 img-fluid" alt="">
             </div>
 
             <div class="col-lg-4 mb-4 mb-lg-0">
-                <img src="assets/product/jake-weirick-iM1rrbseXak-unsplash.jpg"
-                    class="w-100 shadow-1-strong rounded mb-4 img-fluid" alt="Mountains in the Clouds" />
+                <img src="assets/img/product/gallery/gallery-three.jpg"
+                    class="w-100 shadow-1-strong rounded mb-4 img-fluid" alt="">
             </div>
 
             <div class="col-lg-4 mb-4 mb-lg-0">
-                <img src="assets/product/dwi-rina-xe4Q1AUB1ZA-unsplash.jpg"
-                    class="w-100 shadow-1-strong rounded mb-4 img-fluid" alt="Waves at Sea" />
+                <img src="assets/img/product/gallery/gallery-four.jpg"
+                    class="w-100 shadow-1-strong rounded mb-4 img-fluid" alt="">
 
-                <img src="assets/product/PicsArt_12-01-06.20.53.jpg"
-                    class="w-100 shadow-1-strong rounded mb-4 img-fluid" alt="Boat on Calm Water" />
-
-
+                <img src="assets/img/product/gallery/gallery-five.jpg"
+                    class="w-100 shadow-1-strong rounded mb-4 img-fluid" alt="">
             </div>
         </div>
-        <!-- Gallery -->
+
+        <!-- Gallery End -->
 
     </div>
-
-    <!-- Second Swiper End -->
-
-
 </section>
 
 <!-- Section-5 Component End -->

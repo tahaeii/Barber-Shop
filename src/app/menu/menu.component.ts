@@ -9,28 +9,18 @@ import { ServiceService } from '../service.service';
 export class MenuComponent implements OnInit {
 
 
-  constructor(public username: ServiceService, private render: Renderer2, private elmn: ElementRef) {
-    // UsernameService
-  }
-
-  // ngOnInit() {
-  //     const script = this.render.createElement('script');
-  //     script.src = 'assets/menuscript.js';
-  //     this.render.appendChild(this.elmn.nativeElement, script);
-  // } // Show the swiper code
-
+  constructor(public srvc: ServiceService, private render: Renderer2, private elmn: ElementRef) { }
 
   navbarSticky = false;
 
   ngOnInit() {
-    this.username.scrollPosition$.subscribe(scrollPos => this.navbarSticky = scrollPos > 0);
+    this.srvc.scrollPosition$.subscribe(scrollPos => this.navbarSticky = scrollPos > 0);
     const script = this.render.createElement('script');
     script.src = 'assets/menuscript.js';
     this.render.appendChild(this.elmn.nativeElement, script);
-  }
+  } // Sub Menu Js
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll(_event: Event) {
-    // Optional: Add any additional handling if needed
   }// Fixed Menu After Scroll
 }

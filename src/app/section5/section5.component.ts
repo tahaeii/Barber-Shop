@@ -13,12 +13,12 @@ export class Section5Component implements OnInit {
         const script = this.renderer.createElement('script');
         script.src = 'assets/myscript.js';
         this.renderer.appendChild(this.el.nativeElement, script);
-    } // Show the swiper code
+    } // Show the Slider code
 
     products: any = [
         {
             id: 1,
-            image: { url: 'assets/product/1.jpg' },
+            image: { url: 'assets/img/product/1.jpg' },
             alt: '',
             categories: 'Hair',
             lPrice: 325,
@@ -29,7 +29,7 @@ export class Section5Component implements OnInit {
         },
         {
             id: 2,
-            image: { url: 'assets/product/2.jpg' },
+            image: { url: 'assets/img/product/2.jpg' },
             alt: '',
             categories: 'Beard',
             lPrice: 1099,
@@ -40,7 +40,7 @@ export class Section5Component implements OnInit {
         },
         {
             id: 3,
-            image: { url: 'assets/product/3.jpg' },
+            image: { url: 'assets/img/product/3.jpg' },
             alt: '',
             categories: 'Cleansing',
             lPrice: 210,
@@ -51,7 +51,7 @@ export class Section5Component implements OnInit {
         },
         {
             id: 4,
-            image: { url: 'assets/product/4.jpg' },
+            image: { url: 'assets/img/product/4.jpg' },
             alt: '',
             categories: 'Hair',
             lPrice: 1099,
@@ -63,7 +63,7 @@ export class Section5Component implements OnInit {
         },
         {
             id: 5,
-            image: { url: 'assets/product/5.jpg' },
+            image: { url: 'assets/img/product/5.jpg' },
             alt: '',
             categories: 'Hair',
             lPrice: 1050,
@@ -74,7 +74,7 @@ export class Section5Component implements OnInit {
         },
         {
             id: 6,
-            image: { url: 'assets/product/6.jpg' },
+            image: { url: 'assets/img/product/6.jpg' },
             alt: '',
             categories: 'Coloring',
             lPrice: 83,
@@ -85,7 +85,7 @@ export class Section5Component implements OnInit {
         },
         {
             id: 7,
-            image: { url: 'assets/product/7.jpg' },
+            image: { url: 'assets/img/product/7.jpg' },
             alt: '',
             categories: 'Hair',
             lPrice: 199,

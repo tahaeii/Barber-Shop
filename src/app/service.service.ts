@@ -6,12 +6,18 @@ import { BehaviorSubject, Observable, Subject } from 'rxjs';
 })
 export class ServiceService {
 
-  private scrollPositionSubject = new BehaviorSubject<number>(0);
-  public scrollPosition$: Observable<number> = this.scrollPositionSubject.asObservable();
-
   constructor() {
     window.addEventListener('scroll', () => this.scrollPositionSubject.next(window.scrollY)); // Fixed Menu After Scroll
   }
+
+  // ////////////////////////////////////////////////////////////
+  // Menu Service
+
+  private scrollPositionSubject = new BehaviorSubject<number>(0);
+  public scrollPosition$: Observable<number> = this.scrollPositionSubject.asObservable();
+
+  // ////////////////////////////////////////////////////////////
+  // SC4 Service
 
   private selected: number[] = []; // save the service-body's id
 
@@ -78,9 +84,9 @@ export class ServiceService {
 
 
   saveData = {
-    name : '',
-    service : this.selected,
-    date : this.dateSelected,
+    name: '',
+    service: this.selected,
+    date: this.dateSelected,
   }
 
 
