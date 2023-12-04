@@ -36,17 +36,8 @@ export class Section4Component implements OnInit {
   }
 
 
-  minDate !: Date;
-  maxDate !: Date;
-
   constructor(public _formBuilder: FormBuilder, public srvc: ServiceService,public dialog: MatDialog) {
 
-    this.minDate = new Date();
-
-    this.maxDate = new Date();
-    this.maxDate.setDate(this.maxDate.getDate() + 30);
-
-    // Access To Celander Dates
   }
 
   openDialog(): void {
@@ -54,21 +45,6 @@ export class Section4Component implements OnInit {
       width: '340px',disableClose: true 
     });
   }
-
-
-
-  myFilter = (d: Date | null): boolean => {
-    // const jalaliDate = moment(d).format('jYYYY/jM/jD');
-    // const dayOfWeek = moment(jalaliDate, 'jYYYY/jM/jD').day();
-    // return dayOfWeek !== 5 && dayOfWeek !== 6;
-
-    if (!d) {
-      return false;
-    }
-    const jalaliDate = moment(d).format('dddd'); // dddd means the day of the week
-    return jalaliDate !== 'جمعه';
-  }// Prevent Friday and Saturday from being selected.
-
 
 
 

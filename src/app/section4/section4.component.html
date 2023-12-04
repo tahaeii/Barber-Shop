@@ -10,19 +10,25 @@
 
         <mat-stepper #stepper class="mat-stepper-style my-0 mx-auto">
 
-            <mat-step [stepControl]="firstFormGroup" errorMessage="Name is required.">
+            <mat-step [stepControl]="firstFormGroup">
                 <ng-template matStepLabel>Start Appointment</ng-template>
+
                 <div class="stepper-text text-center">
                     <div class="stepper-text-head">
-                        <h2>App<span style="color: #dc3545;">o</span>intment Now !</h2>
+                        <h2>
+                            App<span class="text-danger">o</span>intment Now !
+                        </h2>
                     </div>
                     <div class="stepper-text-content">
                         <p class="text-muted">
-                            You can save time by booking in advance. Indeed, get a <strong
-                                style="color: #dc3545;">20%</strong> discount!</p>
+                            You can save time by booking in advance. Indeed, get a
+                            <strong class="text-danger">20%</strong> discount!
+                        </p>
                     </div>
+
                     <button class="btn btn-danger" matStepperNext>Let's Go!</button>
                 </div>
+
             </mat-step>
 
             <mat-step [stepControl]="secondFormGroup">
@@ -30,73 +36,12 @@
 
                 <app-second-stepper (goToNextStep)="goToNextStep()"></app-second-stepper>
 
-
             </mat-step>
 
             <mat-step [stepControl]="thirdFormGroup">
                 <ng-template matStepLabel>Select Date</ng-template>
 
-                <div class="steppr-condition">
-
-                    <div class="date-fix d-flex">
-                        <div class="calendar mt-5">
-
-                            <!-- <mat-form-field>
-                                <mat-label>Choose a date</mat-label>
-                                <input matInput [matDatepickerFilter]="myFilter" [matDatepicker]="picker" [min]="minDate" [max]="maxDate">
-                                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                                <mat-datepicker #picker>
-                                    <mat-datepicker-actions>
-                                        <button mat-button matDatepickerCancel>Cancel</button>
-                                        <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
-                                      </mat-datepicker-actions>
-                                </mat-datepicker>
-                            </mat-form-field> -->
-
-
-                            <div class="input-group mb-3" style="padding: 0px 14rem;">
-                                <input style="background: #e0e0e0;
-                                border: none;
-                                padding: 10px;
-                                border-radius: 5px;
-                                width: 43rem;
-                                position: absolute;" matInput [matDatepicker]="picker" placeholder="Choose a date"
-                                    aria-label="Recipient's username" aria-describedby="button-addon2">
-                                <button style="position: relative;
-                                left: 40rem;
-                                top: 3px;" class="btn btn-outline-secondary" type="button" id="button-addon2"
-                                    (click)="picker.open()"> <i
-                                        class="fa-light fa-calendar-circle-plus fa-lg ms-3"></i></button>
-                            </div>
-
-                            <mat-datepicker #picker>
-                                <mat-datepicker-actions>
-                                    <button mat-button matDatepickerCancel>Cancel</button>
-                                    <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
-                                </mat-datepicker-actions>
-                            </mat-datepicker>
-
-
-
-                        </div>
-                    </div>
-
-                    <app-date [ngClass]="{'load-date-user': srvc.isUser}"></app-date>
-
-                    <!-- <div *ngIf="srvc.isUser">
-                        <div class="steppr-condition-contain">
-                            <p>Wait !!!</p>
-                            <p class="text-muted">It's better to login first !</p>
-                            <button class="btn btn-info" style="padding: 7px 50px;">Log in</button><br>
-                            <a [routerLink]="'/user'">You don't have an account?</a>
-                        </div>
-                    </div> -->
-
-                </div>
-                <div>
-                    <button mat-button matStepperPrevious (click)="resetService()">Back</button>
-                </div>
-
+                <app-date></app-date>
 
             </mat-step>
 
@@ -176,6 +121,7 @@
 
 
                 </div>
+
             </mat-step>
 
             <mat-step>
@@ -188,6 +134,7 @@
             </mat-step>
 
         </mat-stepper>
+
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
             <path fill="#dc3545" fill-opacity="0.9" d="M0,160L720,224L1440,160L1440,320L720,320L0,320Z"></path>
         </svg>

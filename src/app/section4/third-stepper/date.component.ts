@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import * as moment from 'moment';
 import { ServiceService } from 'src/app/service.service';
 
 @Component({
@@ -8,14 +9,32 @@ import { ServiceService } from 'src/app/service.service';
 })
 export class DateComponent implements OnInit {
 
-  constructor(public srvc: ServiceService) { }
+  dateValue = '';
+  minDate !: Date;
+  maxDate !: Date;
 
-  showLoader: boolean = true;
+  constructor(public srvc: ServiceService) {
+
+    this.minDate = new Date();
+    this.maxDate = new Date();
+    this.maxDate.setDate(this.maxDate.getDate() + 30);
+  }// Access To Celander Dates
+
+  myFilter = (d: Date | null): boolean => {
+    // const jalaliDate = moment(d).format('jYYYY/jM/jD');
+    // const dayOfWeek = moment(jalaliDate, 'jYYYY/jM/jD').day();
+    // return dayOfWeek !== 5 && dayOfWeek !== 6;
+
+    if (!d) {
+      return false;
+    }
+    const jalaliDate = moment(d).format('dddd'); // dddd means the day of the week
+    return jalaliDate !== 'جمعه';
+  }// Prevent Friday and Saturday from being selected.
+
 
   ngOnInit() {
-    setTimeout(() => {
-      this.showLoader = false;
-    }, 100);
+
   }
 
   isSelected !: boolean; // is service-body selected?
@@ -65,12 +84,12 @@ export class DateComponent implements OnInit {
     });
     this.srvc.saveDateSelected(date.id);
     this.diasableButton = this.srvc.dataSelectedCheck().length === 0 || !date.isSelected;
-  
   }
-  
+
 
   nexStepper() {
     this.srvc.fillReservedData();
+    // console.log(this.srvc.saveData)
   }
-  
+
 }

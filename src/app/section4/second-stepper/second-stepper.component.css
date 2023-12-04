@@ -6,14 +6,12 @@
     display: flex;
     flex-wrap: wrap;
     padding: 20px 0px 20px 0px;
-    /* justify-content: space-between; */
     justify-content: flex-start;
     margin-left: 38px;
 }
 
 #services .services .service-body {
     display: flex;
-    /* border: 2px solid #3d3d3d; */
     width: 25%;
     border-radius: 7px;
     box-sizing: border-box;

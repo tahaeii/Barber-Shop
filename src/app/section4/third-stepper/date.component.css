@@ -1,14 +1,13 @@
 #daSection .dasection .appointment-time {
     text-align: -webkit-center;
     padding: 2rem;
-    margin: 0 auto;
+    justify-content: center;
 }
 
 .appointment-time .time {
-    padding: 10px 0;
+    padding: 20px 20px;
     line-height: 1.8;
-    /* border: 1.5px solid; */
-    flex: 10%;
+    /* flex: 10%; */
     margin: 8px;
     border-radius: 20%;
     box-shadow: 0px 0rem 10px rgba(0, 0, 0, 0.175);
@@ -43,4 +42,13 @@ p {
 
 .selected-service {
     box-shadow: 0 0 5px 0px #ff0000 !important;
+}
+
+.calendar input{
+    background: #e0e0e0;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            width: 43rem;
+            position: absolute;
 }

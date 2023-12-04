@@ -3,14 +3,33 @@
 
 <section id="daSection">
     <div class="dasection">
+        <div class="calendar mt-2">
+            <div class="input-group mb-3" style="padding: 0px 14rem;">
+                <input [matDatepickerFilter]="myFilter" [matDatepicker]="picker" [min]="minDate" [max]="maxDate" [(ngModel)]="dateValue" matInput [matDatepicker]="picker" placeholder="Choose a date - yyy/mm/d"
+                    aria-label="Recipient's username" aria-describedby="button-addon2">
+                <button style="position: relative;left: 40rem; top: 3px;" class="btn btn-outline-secondary"
+                    type="button" id="button-addon2" (click)="picker.open()"> <i
+                        class="fa-light fa-calendar-circle-plus fa-lg ms-3"></i></button>
+            </div>
+            <mat-datepicker #picker>
+                <mat-datepicker-actions>
+                    <button mat-button matDatepickerCancel>Cancel</button>
+                    <button mat-raised-button color="primary" matDatepickerApply>Apply</button>
+                </mat-datepicker-actions>
+            </mat-datepicker>
+        </div>
 
-        <div class="appointment-time d-flex flex-wrap ms-5">
+        <div *ngIf="!dateValue" class="opening text-muted fs-6 m-4 text-center">
+            <p>Opening H<span class="text-danger">o</span>ur 10:00 am - 12:00 pm</p>
+        </div>
 
-            <div class="time m-auto" *ngFor="let date of datee" [ngClass]="{'selected-service': date.isSelected}"
+        <div *ngIf="dateValue"  class="appointment-time d-flex flex-wrap">
+
+            <div class="time" *ngFor="let date of datee" [ngClass]="{'selected-service': date.isSelected}"
                 (click)="selectedDate(date)">
 
                 <div class="time-title">
-                    <p class="d-none" >{{ date.title }}</p>
+                    <p class="d-none">{{ date.title }}</p>
                 </div>
                 <div class="time-time" style="    font-size: 1.1rem;">
                     <p>{{ date.time }}</p>
@@ -23,7 +42,8 @@
         </div>
 
         <div class="float-end" style="margin-right: 4rem;">
-            <button class="btn btn-danger" matStepperNext (click)="nexStepper()"
+            <button mat-button matStepperPrevious>Back</button>
+            <button class="btn btn-danger ms-2" matStepperNext (click)="nexStepper()"
                 [disabled]="diasableButton">Finish?</button>
         </div>
     </div>

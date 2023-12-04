@@ -12,7 +12,7 @@ import { ServiceService } from 'src/app/service.service';
 export class SecondStepperComponent {
 
   @ViewChild('stepper') stepper !: MatStepper;
-  @Output() goToNextStep: EventEmitter<void> = new EventEmitter<void>();
+  @Output() goToNextStep: EventEmitter<void> = new EventEmitter<void>(); //Next Stepper Button
 
 
   secondFormGroup = this._formBuilder.group({
@@ -24,10 +24,7 @@ export class SecondStepperComponent {
   });
 
 
-  constructor(public _formBuilder: FormBuilder, public srvc: ServiceService, public dialog: MatDialog) {
-
-    // Access To Celander Dates
-  }
+  constructor(public _formBuilder: FormBuilder, public srvc: ServiceService, public dialog: MatDialog) { }
 
   services = [
     {
@@ -102,11 +99,7 @@ export class SecondStepperComponent {
       pictureClass: 'service-picture-bac-9',
       isSelected: false
     },
-  ]
-
-
-
-  // An array of objects
+  ] // An array of objects
 
   isSelected !: boolean; // is service-body selected?
   selected: string[] = []; // save the service-body's id
@@ -153,8 +146,5 @@ export class SecondStepperComponent {
     }, 3000);
     // Show Loader
   }
-
-
-
 }
 

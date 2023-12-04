@@ -30,7 +30,7 @@ export class ServiceService {
 
   removeSelected(itemId: number): void {
     this.selected = this.selected.filter(id => id !== itemId);
-    console.log(this.selected)
+    // console.log(this.selected)
   }
 
   // ////////////////////////////////////////////////////////////
@@ -66,15 +66,26 @@ export class ServiceService {
     if (index !== -1) {
       this.dateSelected.splice(index, 1);  // حذف تاریخ اگر انتخاب شده بود
     }
-
     this.dateSelected = [id];  // تنها تاریخ جدید را انتخاب کنید
-
+    console.log(this.dateSelected)
   }
 
   removeDateSelected(itemId: number): void {
     this.dateSelected = this.dateSelected.filter(id => id !== itemId);
-    console.log(this.dateSelected)
   }
+
+  // ////////////////////////////////////////////////////////////
+
+
+  saveData = {
+    name : '',
+    service : this.selected,
+    date : this.dateSelected,
+  }
+
+
+  // ////////////////////////////////////////////////////////////
+
 
   reservedData = [
     {
