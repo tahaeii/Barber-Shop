@@ -3,7 +3,7 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { MatStepper } from '@angular/material/stepper';
 import { ServiceService } from '../service.service';
 import * as moment from 'moment';
-import { PopUpComponent } from './pop-up/pop-up.component';
+import { PopUpComponent } from '../abilities/pop-up/pop-up.component';
 import { MatDialog } from '@angular/material/dialog';
 
 @Component({
@@ -11,7 +11,7 @@ import { MatDialog } from '@angular/material/dialog';
   templateUrl: './section4.component.html',
   styleUrls: ['./section4.component.css']
 })
-export class Section4Component implements OnInit {
+export class Section4Component {
 
   @ViewChild('stepper') stepper !: MatStepper;
 
@@ -29,29 +29,14 @@ export class Section4Component implements OnInit {
 
   fourthFormGroup = this._formBuilder.group({
     secondCtrl: ['', Validators.required],
-  });
+  }); // For better access to Stepper
 
   goToNextStep() {
     this.stepper.next();
-  }
+  } // Order of SecondStepperComponent
 
 
-  constructor(public _formBuilder: FormBuilder, public srvc: ServiceService,public dialog: MatDialog) {
-
-  }
-
-  openDialog(): void {
-    const dialogRef = this.dialog.open(PopUpComponent,{
-      width: '340px',disableClose: true 
-    });
-  }
-
-
-
-  ngOnInit(): void {
-
-  }
-
+  constructor(public _formBuilder: FormBuilder, public srvc: ServiceService) {}
   
 
   resetService() {
@@ -61,12 +46,5 @@ export class Section4Component implements OnInit {
     // this.visibleServices = 6;
   }
 
-  nameShow !: string;
-  emailShow !: string;
-  password !: number;
-
-  name(value: string) {
-    this.nameShow = value;
-  }
 
 }

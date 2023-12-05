@@ -8,19 +8,16 @@ import { MatDialog } from '@angular/material/dialog';
   styleUrls: ['./pop-up.component.css']
 })
 export class PopUpComponent implements OnInit {
-  
+
   public breakpoint !: number; // Breakpoint observer code
-  public fname: string = `Ramesh`;
-  public lname: string = `Suresh`;
+  public fname !: string;
+  public lname !: string;
   public addCusForm !: FormGroup;
   wasFormChanged = false;
 
-  constructor(
-    private fb: FormBuilder,
-    public dialog: MatDialog
-  ) { }
+  constructor(private fb: FormBuilder, public dialog: MatDialog) { }
 
-  public ngOnInit(): void {
+  ngOnInit() {
     this.addCusForm = this.fb.group({
       IdProof: null,
       firstname: [this.fname, [Validators.required, Validators.pattern('[a-zA-Z]+([a-zA-Z ]+)*')]],
@@ -44,6 +41,10 @@ export class PopUpComponent implements OnInit {
     //   this.dialog.closeAll();
     // }
   }
+
+  public cancel(): void { 
+    this.dialog.closeAll();
+}
 
   // tslint:disable-next-line:no-any
   public onResize(event: any): void {

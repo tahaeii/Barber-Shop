@@ -38,6 +38,10 @@ body {
     font-family: 'Merienda';
 }
 
+* {
+    font-family: 'Merienda';
+}
+
 h2 {
     line-height: 1;
     font-size: xxx-large;
@@ -88,3 +92,106 @@ h2 {
     transition: all 1.5s;
     background: white;
 }
+
+
+*::-webkit-scrollbar {
+    width: 11px;
+}
+
+*::-webkit-scrollbar-track {
+    background: white;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: rgb(237 131 58 / 80%);
+    border-radius: 5px;
+}
+
+/* Scroll Style */
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+
+    .navbar-brand {
+        width: 24rem;
+        position: static !important;
+    }
+
+
+    #fSection .fsection .fsection-bacground {
+        background-position: bottom !important;
+    }
+
+    .fsection-bacground .fsection-bac-content {
+        right: 0 !important;
+    }
+
+    .fsection-bac-cntnt-l-txt {
+        width: auto !important;
+    }
+
+    #sSection {
+        padding: 3rem 0;
+    }
+
+    #sSection .ssection .about {
+        flex-direction: column !important;
+    }
+
+
+    .about .ssection-about-img {
+        width: 85% !important;
+        margin: 2rem auto;
+    }
+
+    .ssection-about-img img {
+        width: 100% !important;
+    }
+
+    .about .ssection-about-txt {
+        width: inherit !important;
+    }
+
+
+    .customer {
+        display: block !important;
+        width: 100% !important;
+        margin-left: 1rem !important;
+        text-align: center;
+    }
+
+    .customer button {
+        top: 20px !important;
+        left: 7rem !important;
+    }
+
+    .members {
+        align-items: baseline !important;
+        margin: 1rem 2rem 0;
+    }
+
+    .sesection ul {
+        justify-content: center;
+    }
+
+    .footer {
+        margin-top: 0rem !important;
+    }
+
+    .footer>svg {
+        top: -0.5px !important;
+    }
+
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+/* @media only screen and (min-width: 600px) {...} */
+
+/* Medium devices (landscape tablets, 768px and up) */
+/* @media only screen and (min-width: 768px) {...} */
+
+/* Large devices (laptops/desktops, 992px and up) */
+/* @media only screen and (min-width: 992px) {...} */
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+/* @media only screen and (min-width: 1200px) {...} */

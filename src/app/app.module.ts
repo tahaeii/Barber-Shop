@@ -24,9 +24,10 @@ import { DateComponent } from './section4/third-stepper/date.component';
 import { FooterComponent } from './footer/footer.component';
 import { UserAccountComponent } from './user-account/user-account.component';
 import { ProfileComponent } from './user-account/profile/profile.component';
-import { PopUpComponent } from './section4/pop-up/pop-up.component';
-import { ScrollToTopComponent } from './scroll-to-top/scroll-to-top.component';
+import { PopUpComponent } from './abilities/pop-up/pop-up.component';
+import { ScrollToTopComponent } from './abilities/scroll-to-top/scroll-to-top.component';
 import { SecondStepperComponent } from './section4/second-stepper/second-stepper.component';
+import { FourthStepperComponent } from './section4/fourth-stepper/fourth-stepper.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { SecondStepperComponent } from './section4/second-stepper/second-stepper
     ProfileComponent,
     PopUpComponent,
     ScrollToTopComponent,
-    SecondStepperComponent
+    SecondStepperComponent,
+    FourthStepperComponent
   ],
   imports: [
     BrowserModule,

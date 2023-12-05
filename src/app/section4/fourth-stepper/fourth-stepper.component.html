@@ -1,0 +1,67 @@
+<div id="information" class="d-flex justify-content-around align-items-center">
+
+
+    <form class="stepper-form example-form">
+        <table class="example-full-width" cellspacing="0">
+            <tr>
+                <td><mat-form-field class="example-full-width">
+                        <mat-label>name</mat-label>
+                        <input matInput placeholder="Name" (input)="name($event.target.value)">
+                    </mat-form-field></td>
+                <td><mat-form-field class="example-full-width ms-4">
+                        <mat-label>Email</mat-label>
+                        <input matInput placeholder="Email">
+                    </mat-form-field></td>
+            </tr>
+        </table>
+
+        <mat-form-field style="width: 28.3rem;">
+            <mat-label>Password</mat-label>
+            <input matInput placeholder="Passowrd">
+        </mat-form-field>
+
+        <div class="login-ques text-muted text-center" style="font-size: x-small;">
+            <p>Already Have An Account? Click
+                <span class="text-danger" (click)="openDialog()" style="cursor: pointer;">here</span>
+            </p>
+        </div>
+
+
+        <div class="mt-4 mb-5">
+            <button mat-button matStepperPrevious>Back</button>
+            <button mat-button matStepperNext>Next</button>
+        </div>
+    </form>
+
+    <div class="stepper-info">
+        <div class="info-name text-center fs-4">
+            <p>Dear
+                <span *ngIf="!nameShow">...</span>
+                {{ nameShow}}
+            </p>
+        </div>
+        <div class="info-services">
+            <span>Services </span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="160" height="6" viewBox="0 0 139 6" fill="none">
+                <path d="M0.113249 3L3 5.88675L5.88675 3L3 0.113249L0.113249 3ZM3 3.5H139V2.5H3V3.5Z" fill="#525252" />
+            </svg>
+            <span class="span-info">Haire Cut</span>
+        </div>
+        <div class="info-date">
+            <span>Date </span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="160" height="6" viewBox="0 0 139 6" fill="none">
+                <path d="M0.113249 3L3 5.88675L5.88675 3L3 0.113249L0.113249 3ZM3 3.5H139V2.5H3V3.5Z" fill="#525252" />
+            </svg>
+            <span class="span-info">Jun 27</span>
+        </div>
+        <div class="info-time">
+            <span>Time </span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="160" height="6" viewBox="0 0 139 6" fill="none">
+                <path d="M0.113249 3L3 5.88675L5.88675 3L3 0.113249L0.113249 3ZM3 3.5H139V2.5H3V3.5Z" fill="#525252" />
+            </svg>
+            <span class="span-info">13.30</span>
+        </div>
+    </div>
+
+
+</div>

@@ -53,7 +53,7 @@ ul li {
     text-shadow: 0 0 20px white;
     background: linear-gradient(45deg, #c5bdbd, transparent);
     border-radius: 7px;
-    translate: -21px;
+    translate: -3rem 1px;
     text-align-last: center;
 }
 
